@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://adsapi.snapchat.com/v1/campaigns/38ef1dfa-28e8-4556-b75d-2158340e4852
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 Jul 2025 18:42:16 GMT
+      X-Request-Id:
+      - d5ff191f-041d-4a0a-9f77-9eff91ad37c2
+      Content-Length:
+      - '245'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '95'
+      X-Envoy-Upstream-Service-Time:
+      - '96'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"ERROR","request_id":"d5ff191f-041d-4a0a-9f77-9eff91ad37c2","campaigns":[{"sub_request_error_reason":"Error
+        code: E3004, message: Entity does not exist or you do not have permission
+        to access it","sub_request_status":"ERROR"}]}'
+  recorded_at: Sat, 05 Jul 2025 18:42:17 GMT
+recorded_with: VCR 6.3.1

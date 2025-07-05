@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/campaigns/ce00d8e1-ebb1-4885-8348-cf5c20375179
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 Jul 2025 18:42:15 GMT
+      X-Request-Id:
+      - 72a478da-236f-48ca-b28c-f719046910c8
+      Content-Length:
+      - '641'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '75'
+      X-Envoy-Upstream-Service-Time:
+      - '75'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZXF1ZXN0X3N0YXR1cyI6IlNVQ0NFU1MiLCJyZXF1ZXN0X2lkIjoiNzJhNDc4ZGEtMjM2Zi00OGNhLWIyOGMtZjcxOTA0NjkxMGM4IiwiY2FtcGFpZ25zIjpbeyJzdWJfcmVxdWVzdF9zdGF0dXMiOiJTVUNDRVNTIiwiY2FtcGFpZ24iOnsiaWQiOiJjZTAwZDhlMS1lYmIxLTQ4ODUtODM0OC1jZjVjMjAzNzUxNzkiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNC0wNlQxMjo1MDoxMy45OTdaIiwiY3JlYXRlZF9hdCI6IjIwMjUtMDQtMDZUMTI6NTA6MTMuOTk3WiIsIm5hbWUiOiJDYW1wYWlnbiAtIFRlxZ90IOS9oOWlvSAtIDIwMjUtMDQtMDZUMTQ6NTA6MTIuODQ5NzUwIC0gYXF1YWxpIiwiYWRfYWNjb3VudF9pZCI6ImRiYjk1ZjY2LTRlNDUtNDZmMC05NzYwLTE0ZWE4NDFkYjNiNCIsImRhaWx5X2J1ZGdldF9taWNybyI6MzQ1NjAwMDAsInN0YXR1cyI6IkFDVElWRSIsIm9iamVjdGl2ZSI6IkJSQU5EX0FXQVJFTkVTUyIsInN0YXJ0X3RpbWUiOiIyMDI1LTA0LTA2VDEyOjUwOjEyLjg0OVoiLCJkZWxpdmVyeV9zdGF0dXMiOlsiSU5WQUxJRF9OT1RfRUZGRUNUSVZFX0FDVElWRSIsIklOVkFMSURfVEVTVF9BQ0NPVU5UIl0sImNyZWF0aW9uX3N0YXRlIjoiUFVCTElTSEVEIiwicGFjaW5nX3Byb3BlcnRpZXNfdmVyc2lvbiI6MH19XX0=
+  recorded_at: Sat, 05 Jul 2025 18:42:15 GMT
+recorded_with: VCR 6.3.1

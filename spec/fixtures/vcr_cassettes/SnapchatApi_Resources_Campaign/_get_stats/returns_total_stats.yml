@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/campaigns/ce00d8e1-ebb1-4885-8348-cf5c20375179/stats?end_time=2025-07-31T00:00:00%2B02:00&granularity=TOTAL&start_time=2025-07-01T00:00:00%2B02:00
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 Jul 2025 18:42:17 GMT
+      X-Request-Id:
+      - cab153c8-ecb8-445e-a7a1-f75b61a017e5
+      Content-Length:
+      - '405'
+      X-Rate-Limit-Limit:
+      - '1666'
+      X-Rate-Limit-Remaining:
+      - '1664'
+      X-Rate-Limit-Reset:
+      - '1751740940000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '73'
+      X-Envoy-Upstream-Service-Time:
+      - '74'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"cab153c8-ecb8-445e-a7a1-f75b61a017e5","total_stats":[{"sub_request_status":"SUCCESS","total_stat":{"id":"ce00d8e1-ebb1-4885-8348-cf5c20375179","type":"CAMPAIGN","granularity":"TOTAL","stats":{"impressions":0,"spend":0},"start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","finalized_data_end_time":"2025-07-05T14:00:00.000Z"}}]}'
+  recorded_at: Sat, 05 Jul 2025 18:42:17 GMT
+recorded_with: VCR 6.3.1

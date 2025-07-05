@@ -122,6 +122,8 @@ GEM
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
     uri (1.0.3)
+    vcr (6.3.1)
+      base64
     version_gem (1.1.8)
     webmock (3.25.1)
       addressable (>= 2.8.0)
@@ -139,6 +141,7 @@ DEPENDENCIES
   rspec (~> 3.0)
   snapchat_api!
   standard (= 1.49.0)
+  vcr (~> 6.0)
   webmock (~> 3.0)
 
 BUNDLED WITH

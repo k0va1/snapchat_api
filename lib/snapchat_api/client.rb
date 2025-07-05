@@ -6,14 +6,20 @@ require "snapchat_api/error"
 
 module SnapchatApi
   class Client
+    attr_accessor :client_id, :client_secret, :access_token, :refresh_token, :debug
+
     ADS_HOST = "https://adsapi.snapchat.com"
+    ACCOUNTS_HOST = "https://accounts.snapchat.com"
+
     ADS_CURRENT_API_PATH = "v1"
     ADS_URL = "#{ADS_HOST}/#{ADS_CURRENT_API_PATH}"
 
-    def initialize(client_id:, client_secret:, access_token: nil, refresh_token: nil)
+    def initialize(client_id:, client_secret:, access_token: nil, refresh_token: nil, debug: false)
       @client_id = client_id
       @client_secret = client_secret
       @access_token = access_token
+      @refresh_token = refresh_token
+      @debug = debug
     end
 
     def connection
@@ -30,14 +36,14 @@ module SnapchatApi
 
         conn.response :json
 
+        conn.response :logger if @debug
+
         conn.adapter Faraday.default_adapter
       end
     end
 
     def request(method, path, params = {}, headers = {})
-      url = File.join(DEFAULT_URL, path)
-
-      response = connection.run_request(method, url, nil, headers) do |req|
+      response = connection.run_request(method, path, nil, headers) do |req|
         case method
         when :get, :delete
           req.params = params
@@ -53,6 +59,7 @@ module SnapchatApi
           end
         end
       end
+      puts response.body
 
       handle_response(response)
     end
@@ -82,18 +89,21 @@ module SnapchatApi
       raise klass.new(error_message || "HTTP #{status}", status, body)
     end
 
-    def update_access_token
-      response = Faraday.post("#{HOST}/oauth/token") do |req|
+    def refresh_tokens!
+      response = Faraday.post("#{ACCOUNTS_HOST}/login/oauth2/access_token") do |req|
         req.headers["Content-Type"] = "application/x-www-form-urlencoded"
         req.body = URI.encode_www_form(
           client_id: @client_id,
           client_secret: @client_secret,
-          grant_type: "client_credentials"
+          refresh_token: @refresh_token,
+          grant_type: "refresh_token"
         )
       end
-      data = JSON.parse(response.body)
+      handle_response(response)
+      body = JSON.parse(response.body)
 
-      @access_token = data["access_token"]
+      @access_token = body["access_token"]
+      @refresh_token = body["refresh_token"]
     end
 
     def auth
@@ -105,22 +115,6 @@ module SnapchatApi
 
     def campaigns
       @campaigns ||= SnapchatApi::Resources::Campaign.new(self)
-    end
-
-    def campaign_items
-      @campaign_items ||= SnapchatApi::Resources::CampaignItem.new(self)
-    end
-
-    def motion_ads
-      @motion_ads ||= SnapchatApi::Resources::MotionAds.new(self)
-    end
-
-    def operations
-      @operations ||= SnapchatApi::Resources::Operations.new(self)
-    end
-
-    def reportings
-      @reportings ||= SnapchatApi::Resources::Reportings.new(self)
     end
   end
 end
