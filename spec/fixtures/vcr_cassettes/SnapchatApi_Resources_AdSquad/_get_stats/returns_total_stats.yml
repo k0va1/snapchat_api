@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/adsquads/0853af89-5929-4c6d-ac6f-78310b434aac/stats?end_time=2025-07-31T00:00:00%2B02:00&granularity=TOTAL&start_time=2025-07-01T00:00:00%2B02:00
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 06 Jul 2025 11:38:30 GMT
+      X-Request-Id:
+      - 57559778-d0da-4a47-b6da-6f9a567c9ca8
+      Content-Length:
+      - '405'
+      X-Rate-Limit-Limit:
+      - '1666'
+      X-Rate-Limit-Remaining:
+      - '1664'
+      X-Rate-Limit-Reset:
+      - '1751801915000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '59'
+      X-Envoy-Upstream-Service-Time:
+      - '61'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"57559778-d0da-4a47-b6da-6f9a567c9ca8","total_stats":[{"sub_request_status":"SUCCESS","total_stat":{"id":"0853af89-5929-4c6d-ac6f-78310b434aac","type":"AD_SQUAD","granularity":"TOTAL","stats":{"impressions":0,"spend":0},"start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","finalized_data_end_time":"2025-07-06T09:00:00.000Z"}}]}'
+  recorded_at: Sun, 06 Jul 2025 11:38:30 GMT
+recorded_with: VCR 6.3.1

@@ -59,7 +59,6 @@ module SnapchatApi
           end
         end
       end
-      puts response.body
 
       handle_response(response)
     end
@@ -115,6 +114,10 @@ module SnapchatApi
 
     def campaigns
       @campaigns ||= SnapchatApi::Resources::Campaign.new(self)
+    end
+
+    def ad_squads
+      @ad_squads ||= SnapchatApi::Resources::AdSquad.new(self)
     end
   end
 end

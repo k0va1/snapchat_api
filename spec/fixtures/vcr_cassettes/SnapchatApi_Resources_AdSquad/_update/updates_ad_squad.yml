@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://adsapi.snapchat.com/v1/campaigns/ce00d8e1-ebb1-4885-8348-cf5c20375179/adsquads
+    body:
+      encoding: UTF-8
+      string: '{"adsquads":[{"name":"Ad Squad Uno 1751801906","type":"SNAP_ADS","placement_v2":{"config":"AUTOMATIC"},"optimization_goal":"IMPRESSIONS","bid_micro":100000,"daily_budget_micro":1000000,"bid_strategy":"LOWEST_COST_WITH_MAX_BID","billing_event":"IMPRESSION","targeting":{"geos":[{"country_code":"us"}]},"start_time":"2025-08-11T22:03:58.869Z","campaign_id":"ce00d8e1-ebb1-4885-8348-cf5c20375179"}]}'
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 06 Jul 2025 11:38:26 GMT
+      X-Request-Id:
+      - fa7e8747-5c88-41f0-8fea-571394ef1307
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '82'
+      X-Rate-Limit-Reset:
+      - '1751801910000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '701'
+      X-Envoy-Upstream-Service-Time:
+      - '703'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_status":"SUCCESS","request_id":"fa7e8747-5c88-41f0-8fea-571394ef1307","adsquads":[{"sub_request_status":"SUCCESS","adsquad":{"id":"cdbdd4ac-3aea-442e-8344-b994b411dbf2","updated_at":"2025-07-06T11:38:26.722Z","created_at":"2025-07-06T11:38:26.722Z","name":"Ad
+        Squad Uno 1751801906","status":"PAUSED","campaign_id":"ce00d8e1-ebb1-4885-8348-cf5c20375179","type":"SNAP_ADS","targeting":{"regulated_content":false,"geos":[{"country_code":"us"}],"enable_targeting_expansion":true,"auto_expansion_options":{"interest_expansion_option":{"enabled":true},"custom_audience_expansion_option":{"enabled":true}}},"targeting_reach_status":"VALID","placement_v2":{"config":"AUTOMATIC"},"billing_event":"IMPRESSION","bid_micro":100000,"auto_bid":false,"target_bid":false,"bid_strategy":"LOWEST_COST_WITH_MAX_BID","daily_budget_micro":1000000,"start_time":"2025-08-11T22:03:58.869Z","optimization_goal":"IMPRESSIONS","delivery_constraint":"DAILY_BUDGET","pacing_type":"STANDARD","creation_state":"PUBLISHED","delivery_status":["INVALID_NOT_ACTIVE","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_EFFECTIVE_INVALID","INVALID_START_TIME","INVALID_START_TIME_AFTER_END_TIME"],"skadnetwork_properties":{"status":"NEVER_ENROLLED"}}}]}'
+  recorded_at: Sun, 06 Jul 2025 11:38:27 GMT
+- request:
+    method: put
+    uri: https://adsapi.snapchat.com/v1/campaigns/ce00d8e1-ebb1-4885-8348-cf5c20375179/adsquads
+    body:
+      encoding: UTF-8
+      string: '{"adsquads":[{"id":"cdbdd4ac-3aea-442e-8344-b994b411dbf2","updated_at":"2025-07-06T11:38:26.722Z","created_at":"2025-07-06T11:38:26.722Z","name":"Ad
+        Squad Uno 1751801906","status":"PAUSED","campaign_id":"ce00d8e1-ebb1-4885-8348-cf5c20375179","type":"SNAP_ADS","targeting":{"regulated_content":false,"geos":[{"country_code":"us"}],"enable_targeting_expansion":true,"auto_expansion_options":{"interest_expansion_option":{"enabled":true},"custom_audience_expansion_option":{"enabled":true}}},"targeting_reach_status":"VALID","placement_v2":{"config":"AUTOMATIC"},"billing_event":"IMPRESSION","bid_micro":100000,"auto_bid":false,"target_bid":false,"bid_strategy":"LOWEST_COST_WITH_MAX_BID","daily_budget_micro":1000000,"start_time":"2025-08-11T22:03:58.869Z","optimization_goal":"IMPRESSIONS","delivery_constraint":"DAILY_BUDGET","pacing_type":"STANDARD","creation_state":"PUBLISHED","delivery_status":["INVALID_NOT_ACTIVE","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_EFFECTIVE_INVALID","INVALID_START_TIME","INVALID_START_TIME_AFTER_END_TIME"],"skadnetwork_properties":{"status":"NEVER_ENROLLED"},"name":"Updated
+        Ad Squad Name","status":"PAUSED","id":"cdbdd4ac-3aea-442e-8344-b994b411dbf2","campaign_id":"ce00d8e1-ebb1-4885-8348-cf5c20375179"}]}'
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 06 Jul 2025 11:38:27 GMT
+      X-Request-Id:
+      - b733cf5e-2730-45a1-b3ab-e8f8703e2498
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '82'
+      X-Rate-Limit-Reset:
+      - '1751801910000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '663'
+      X-Envoy-Upstream-Service-Time:
+      - '664'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_status":"SUCCESS","request_id":"b733cf5e-2730-45a1-b3ab-e8f8703e2498","adsquads":[{"sub_request_status":"SUCCESS","adsquad":{"id":"cdbdd4ac-3aea-442e-8344-b994b411dbf2","updated_at":"2025-07-06T11:38:27.511Z","created_at":"2025-07-06T11:38:26.722Z","created_by_app_id":"1debb989-3a6f-4cc7-aa9b-099c4c047eef","created_by_user":"e905030e-0f40-4dba-a553-c903d4a352c7","last_updated_by_app_id":"1debb989-3a6f-4cc7-aa9b-099c4c047eef","last_updated_by_user":"e905030e-0f40-4dba-a553-c903d4a352c7","name":"Updated
+        Ad Squad Name","status":"PAUSED","campaign_id":"ce00d8e1-ebb1-4885-8348-cf5c20375179","type":"SNAP_ADS","targeting":{"regulated_content":false,"geos":[{"country_code":"us"}],"enable_targeting_expansion":true,"auto_expansion_options":{"interest_expansion_option":{"enabled":true},"custom_audience_expansion_option":{"enabled":true}}},"targeting_reach_status":"VALID","placement_v2":{"config":"AUTOMATIC"},"billing_event":"IMPRESSION","bid_micro":100000,"auto_bid":false,"target_bid":false,"bid_strategy":"LOWEST_COST_WITH_MAX_BID","daily_budget_micro":1000000,"start_time":"2025-08-11T22:03:58.869Z","optimization_goal":"IMPRESSIONS","delivery_constraint":"DAILY_BUDGET","pacing_type":"STANDARD","creation_state":"PUBLISHED","delivery_status":["INVALID_START_TIME_AFTER_END_TIME","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_EFFECTIVE_INVALID","INVALID_START_TIME","INVALID_NOT_ACTIVE"],"skadnetwork_properties":{"status":"NEVER_ENROLLED"}}}]}'
+  recorded_at: Sun, 06 Jul 2025 11:38:27 GMT
+- request:
+    method: delete
+    uri: https://adsapi.snapchat.com/v1/adsquads/cdbdd4ac-3aea-442e-8344-b994b411dbf2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 06 Jul 2025 11:38:28 GMT
+      X-Request-Id:
+      - e5494acc-6404-4d82-8bc3-5bfc9310bd7b
+      Content-Length:
+      - '94'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '81'
+      X-Rate-Limit-Reset:
+      - '1751801910000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '530'
+      X-Envoy-Upstream-Service-Time:
+      - '530'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"e5494acc-6404-4d82-8bc3-5bfc9310bd7b","adsquads":[]}'
+  recorded_at: Sun, 06 Jul 2025 11:38:28 GMT
+recorded_with: VCR 6.3.1

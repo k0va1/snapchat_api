@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/adsquads
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 06 Jul 2025 11:38:23 GMT
+      X-Request-Id:
+      - 258604e4-7af7-9e66-a8d7-440debe2b8f8
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '66'
+      X-Envoy-Upstream-Service-Time:
+      - '67'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_status":"SUCCESS","request_id":"258604e4-7af7-9e66-a8d7-440debe2b8f8","paging":{},"adsquads":[{"sub_request_status":"SUCCESS","adsquad":{"id":"0853af89-5929-4c6d-ac6f-78310b434aac","updated_at":"2025-06-24T08:53:46.178Z","created_at":"2025-06-24T08:52:11.505Z","name":"United
+        States, All Genders, All Ages","status":"ACTIVE","campaign_id":"c14cd226-1448-4e8d-b994-7e2fe620f7e7","type":"SNAP_ADS","targeting":{"regulated_content":false,"demographics":[{}],"geos":[{"country_code":"us"}],"enable_targeting_expansion":true,"auto_expansion_options":{"interest_expansion_option":{"enabled":true},"custom_audience_expansion_option":{"enabled":true}}},"targeting_reach_status":"VALID","placement":"UNSUPPORTED","billing_event":"IMPRESSION","auto_bid":true,"target_bid":false,"bid_strategy":"AUTO_BID","daily_budget_micro":5000000,"start_time":"2025-04-04T06:48:07.232Z","optimization_goal":"IMPRESSIONS","pixel_id":"94c4845c-9e8f-4131-850a-5a675be35ed6","delivery_constraint":"DAILY_BUDGET","pacing_type":"STANDARD","forced_view_setting":"NONE","creation_state":"PUBLISHED","delivery_status":["INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_UNKNOWN","INVALID_EFFECTIVE_INVALID"],"skadnetwork_properties":{"status":"NEVER_ENROLLED"},"delivery_properties_version":1750755226148,"brand_safety_config":{"inventory_option":"FULL_INVENTORY"}}}]}'
+  recorded_at: Sun, 06 Jul 2025 11:38:24 GMT
+recorded_with: VCR 6.3.1
