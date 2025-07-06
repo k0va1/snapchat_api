@@ -119,5 +119,9 @@ module SnapchatApi
     def ad_squads
       @ad_squads ||= SnapchatApi::Resources::AdSquad.new(self)
     end
+
+    def media
+      @media ||= SnapchatApi::Resources::Media.new(self)
+    end
   end
 end

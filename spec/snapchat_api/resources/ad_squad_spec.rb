@@ -35,7 +35,7 @@ RSpec.describe SnapchatApi::Resources::AdSquad do
       ad_squad = ad_squad_resource.get(ad_squad_id: ad_squad_id)
       expect(ad_squad).to include("id", "name", "status") if ad_squad
     end
-    end
+  end
 
   describe "#create", :vcr do
     let(:ad_squad_params) do
