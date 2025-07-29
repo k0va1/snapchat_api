@@ -2,13 +2,64 @@
 http_interactions:
 - request:
     method: post
+    uri: https://accounts.snapchat.com/login/oauth2/access_token
+    body:
+      encoding: US-ASCII
+      string: client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&refresh_token=<REFRESH_TOKEN>&grant_type=refresh_token
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - API Gateway
+      Date:
+      - Tue, 29 Jul 2025 11:53:32 GMT
+      Content-Type:
+      - application/json
+      X-Envoy-Upstream-Service-Time:
+      - '177'
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 google, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "access_token": "eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..D3ITohOze0VifX30QS6Xog.ub8Ei3e4ZdW1zg5Ttm_xIvExcrvxPeKMhONPF1cUAvEuxLd4pQHQLHEGSAKGtuuyPyVHkwcLveZR6zEysr2MbqdlvR982VXWlJI8Sr7MR9CQvHc8MPkF4L2e_PYwv98UJEdnz1YQJq0GAv9cDWe_uAVPFj1z3wU2aPqu3n5U4zR3lyHOb6BMrNCTBJKU3LGLkpEiQapak5c0AuLgekJSaqcxOhyMh35BuI-kuorZbJ0p7wcmzM2ScZ5hnlBqocWFk-_vSG162Xp84d1mU2h6G4_9wvbZ99UBqql-GP3r_ARijopwaW914ii3NxzR_Zp38epbbpjiYaZQdtLXet7lhA4g0mg-sMxXxacriLwgQvoxKrnl4gpKz1-wGyXnOmR1TwKEDm08tY5EptM_qf4vnsDT7ks6FTnVM92jIjQpXBC7HHRJppc4TkjkRdy5VZOEPSMTNkx5DodysmszRCsjHwBzXAXlEnGyfTlBDpWNoiA8xLEGa0-r8RSTA69W7DN-m_QdB8IMAiJIZEcz8w4FvcygeRg2sUJqL17aLw59s3Dp0zyjgn_QaXbVT_LToSGGBvOnzpudt2L1pMNevwfplVzF2um2FvDw-6rpSn8X35Dk0iWLVCB_O-_tv4k2ioaYx8MTKC-l4reju8mLOrIi1dRFMvUmqCmlrC9Z3OC6_yFMsaaJ5D4M12_3DlW8Il229aWcoUZyfu9RBZPBlWx7rr2dF0RddyE3Rw1QCaGfawo.5zfaknGbJPzJgrqYhq51aA",
+          "token_type": "Bearer",
+          "expires_in": 3600,
+          "refresh_token": "<REFRESH_TOKEN>",
+          "scope": "snapchat-marketing-api",
+          "id_token": ""
+        }
+  recorded_at: Tue, 29 Jul 2025 11:53:32 GMT
+- request:
+    method: post
     uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/campaigns
     body:
       encoding: UTF-8
       string: '{"campaigns":[{"name":"Test Campaign","status":"ACTIVE","start_time":"2026-01-01T00:00:00.000Z","end_time":"2026-12-31T23:59:59.999Z","daily_budget_micro":20000000,"lifetime_spend_cap_micro":20000000}]}'
     headers:
       Authorization:
-      - Bearer <ACCESS_TOKEN>
+      - Bearer eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..D3ITohOze0VifX30QS6Xog.ub8Ei3e4ZdW1zg5Ttm_xIvExcrvxPeKMhONPF1cUAvEuxLd4pQHQLHEGSAKGtuuyPyVHkwcLveZR6zEysr2MbqdlvR982VXWlJI8Sr7MR9CQvHc8MPkF4L2e_PYwv98UJEdnz1YQJq0GAv9cDWe_uAVPFj1z3wU2aPqu3n5U4zR3lyHOb6BMrNCTBJKU3LGLkpEiQapak5c0AuLgekJSaqcxOhyMh35BuI-kuorZbJ0p7wcmzM2ScZ5hnlBqocWFk-_vSG162Xp84d1mU2h6G4_9wvbZ99UBqql-GP3r_ARijopwaW914ii3NxzR_Zp38epbbpjiYaZQdtLXet7lhA4g0mg-sMxXxacriLwgQvoxKrnl4gpKz1-wGyXnOmR1TwKEDm08tY5EptM_qf4vnsDT7ks6FTnVM92jIjQpXBC7HHRJppc4TkjkRdy5VZOEPSMTNkx5DodysmszRCsjHwBzXAXlEnGyfTlBDpWNoiA8xLEGa0-r8RSTA69W7DN-m_QdB8IMAiJIZEcz8w4FvcygeRg2sUJqL17aLw59s3Dp0zyjgn_QaXbVT_LToSGGBvOnzpudt2L1pMNevwfplVzF2um2FvDw-6rpSn8X35Dk0iWLVCB_O-_tv4k2ioaYx8MTKC-l4reju8mLOrIi1dRFMvUmqCmlrC9Z3OC6_yFMsaaJ5D4M12_3DlW8Il229aWcoUZyfu9RBZPBlWx7rr2dF0RddyE3Rw1QCaGfawo.5zfaknGbJPzJgrqYhq51aA
       Content-Type:
       - application/json
       User-Agent:
@@ -23,23 +74,23 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 05 Jul 2025 18:42:15 GMT
+      - Tue, 29 Jul 2025 11:53:32 GMT
       X-Request-Id:
-      - f5068f80-cde0-4eab-b6a3-a1b444f97ce1
+      - 74517c9b-1c50-49fe-a717-02e9b81a6bba
       Content-Length:
-      - '688'
+      - '788'
       X-Rate-Limit-Limit:
       - '83'
       X-Rate-Limit-Remaining:
       - '82'
       X-Rate-Limit-Reset:
-      - '1751740940000'
+      - '1753790015000'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '646'
+      - '759'
       X-Envoy-Upstream-Service-Time:
-      - '646'
+      - '759'
       Server:
       - API Gateway
       X-Envoy-Decorator-Operation:
@@ -52,7 +103,7 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"request_status":"SUCCESS","request_id":"f5068f80-cde0-4eab-b6a3-a1b444f97ce1","campaigns":[{"sub_request_status":"SUCCESS","campaign":{"id":"28741b0d-1598-48cd-b5fe-9e2a2835c0a3","updated_at":"2025-07-05T18:42:16.221Z","created_at":"2025-07-05T18:42:16.221Z","name":"Test
-        Campaign","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","daily_budget_micro":20000000,"status":"ACTIVE","objective":"BRAND_AWARENESS","start_time":"2026-01-01T00:00:00.000Z","end_time":"2026-12-31T23:59:59.999Z","lifetime_spend_cap_micro":20000000,"delivery_status":["INVALID_TEST_ACCOUNT","INVALID_START_TIME","INVALID_NOT_EFFECTIVE_ACTIVE"],"creation_state":"PUBLISHED","pacing_properties_version":0}}]}'
-  recorded_at: Sat, 05 Jul 2025 18:42:16 GMT
+      string: '{"request_status":"SUCCESS","request_id":"74517c9b-1c50-49fe-a717-02e9b81a6bba","campaigns":[{"sub_request_status":"SUCCESS","campaign":{"id":"0b415efa-c1c9-4dc8-8347-f6b9c13844b3","updated_at":"2025-07-29T11:53:33.136Z","created_at":"2025-07-29T11:53:33.136Z","name":"Test
+        Campaign","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","daily_budget_micro":20000000,"status":"ACTIVE","objective":"BRAND_AWARENESS","start_time":"2026-01-01T00:00:00.000Z","end_time":"2026-12-31T23:59:59.999Z","lifetime_spend_cap_micro":20000000,"delivery_status":["INVALID_START_TIME","INVALID_TEST_ACCOUNT","INVALID_NOT_EFFECTIVE_ACTIVE"],"creation_state":"PUBLISHED","objective_v2_properties":{"objective_v2_type":"AWARENESS_AND_ENGAGEMENT","is_auto_generated":true},"pacing_properties_version":0}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:33 GMT
 recorded_with: VCR 6.3.1

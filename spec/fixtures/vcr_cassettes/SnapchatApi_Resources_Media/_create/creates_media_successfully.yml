@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://adsapi.snapchat.com/v1/adsquads/0853af89-5929-4c6d-ac6f-78310b434aac/stats?end_time=2025-07-31T00:00:00%2B02:00&granularity=TOTAL&start_time=2025-07-01T00:00:00%2B02:00
+    method: post
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/media
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"media":[{"name":"Test Media","type":"IMAGE"}]}'
     headers:
       Authorization:
       - Bearer <ACCESS_TOKEN>
@@ -23,23 +23,23 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Jul 2025 11:53:30 GMT
+      - Tue, 29 Jul 2025 11:53:45 GMT
       X-Request-Id:
-      - 98cb2d47-9e5e-4149-8b0f-9967bf69cb7e
+      - '0428f679-8ea9-4b48-9c89-c9c88276b4b2'
       Content-Length:
-      - '405'
+      - '424'
       X-Rate-Limit-Limit:
-      - '1666'
+      - '25'
       X-Rate-Limit-Remaining:
-      - '1664'
+      - '24'
       X-Rate-Limit-Reset:
-      - '1753790015000'
+      - '1753790030000'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '69'
+      - '244'
       X-Envoy-Upstream-Service-Time:
-      - '70'
+      - '245'
       Server:
       - API Gateway
       X-Envoy-Decorator-Operation:
@@ -52,6 +52,7 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"request_status":"SUCCESS","request_id":"98cb2d47-9e5e-4149-8b0f-9967bf69cb7e","total_stats":[{"sub_request_status":"SUCCESS","total_stat":{"id":"0853af89-5929-4c6d-ac6f-78310b434aac","type":"AD_SQUAD","granularity":"TOTAL","stats":{"impressions":0,"spend":0},"start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","finalized_data_end_time":"2025-07-29T09:00:00.000Z"}}]}'
-  recorded_at: Tue, 29 Jul 2025 11:53:30 GMT
+      string: '{"request_status":"SUCCESS","request_id":"0428f679-8ea9-4b48-9c89-c9c88276b4b2","media":[{"sub_request_status":"SUCCESS","media":{"id":"d7195f60-32e0-41ca-90f8-0661a2b57ecd","updated_at":"2025-07-29T11:53:45.306Z","created_at":"2025-07-29T11:53:45.306Z","name":"Test
+        Media","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"PENDING_UPLOAD","is_demo_media":false,"visibility":"VISIBLE"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:45 GMT
 recorded_with: VCR 6.3.1

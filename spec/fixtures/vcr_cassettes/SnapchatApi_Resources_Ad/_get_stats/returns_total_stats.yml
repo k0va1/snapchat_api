@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://adsapi.snapchat.com/v1/adsquads/0853af89-5929-4c6d-ac6f-78310b434aac/stats?end_time=2025-07-31T00:00:00%2B02:00&granularity=TOTAL&start_time=2025-07-01T00:00:00%2B02:00
+    uri: https://adsapi.snapchat.com/v1/ads/bb05b099-140f-47ad-ab96-827960fbdf16/stats?end_time=2025-07-31T00:00:00%2B02:00&granularity=TOTAL&start_time=2025-07-01T00:00:00%2B02:00
     body:
       encoding: US-ASCII
       string: ''
@@ -23,23 +23,23 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Jul 2025 11:53:30 GMT
+      - Tue, 29 Jul 2025 11:53:22 GMT
       X-Request-Id:
-      - 98cb2d47-9e5e-4149-8b0f-9967bf69cb7e
+      - 4a315f81-0614-4ea7-892a-464fb05d45ac
       Content-Length:
-      - '405'
+      - '399'
       X-Rate-Limit-Limit:
       - '1666'
       X-Rate-Limit-Remaining:
       - '1664'
       X-Rate-Limit-Reset:
-      - '1753790015000'
+      - '1753790005000'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '69'
+      - '60'
       X-Envoy-Upstream-Service-Time:
-      - '70'
+      - '60'
       Server:
       - API Gateway
       X-Envoy-Decorator-Operation:
@@ -52,6 +52,6 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"request_status":"SUCCESS","request_id":"98cb2d47-9e5e-4149-8b0f-9967bf69cb7e","total_stats":[{"sub_request_status":"SUCCESS","total_stat":{"id":"0853af89-5929-4c6d-ac6f-78310b434aac","type":"AD_SQUAD","granularity":"TOTAL","stats":{"impressions":0,"spend":0},"start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","finalized_data_end_time":"2025-07-29T09:00:00.000Z"}}]}'
-  recorded_at: Tue, 29 Jul 2025 11:53:30 GMT
+      string: '{"request_status":"SUCCESS","request_id":"4a315f81-0614-4ea7-892a-464fb05d45ac","total_stats":[{"sub_request_status":"SUCCESS","total_stat":{"id":"bb05b099-140f-47ad-ab96-827960fbdf16","type":"AD","granularity":"TOTAL","stats":{"impressions":0,"spend":0},"start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","finalized_data_end_time":"2025-07-29T09:00:00.000Z"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:22 GMT
 recorded_with: VCR 6.3.1

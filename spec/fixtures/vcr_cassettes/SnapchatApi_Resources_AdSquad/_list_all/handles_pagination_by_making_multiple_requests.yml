@@ -23,15 +23,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 06 Jul 2025 11:38:23 GMT
+      - Tue, 29 Jul 2025 11:53:22 GMT
       X-Request-Id:
-      - 92e4e862-f8f6-4c51-8a77-ff45ae651eb0
+      - 51b1f5f3-113a-4d4c-9278-d452be02e6f0
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '69'
+      - '68'
       X-Envoy-Upstream-Service-Time:
-      - '70'
+      - '69'
       Vary:
       - Accept-Encoding
       Server:
@@ -48,7 +48,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"request_status":"SUCCESS","request_id":"92e4e862-f8f6-4c51-8a77-ff45ae651eb0","paging":{},"adsquads":[{"sub_request_status":"SUCCESS","adsquad":{"id":"0853af89-5929-4c6d-ac6f-78310b434aac","updated_at":"2025-06-24T08:53:46.178Z","created_at":"2025-06-24T08:52:11.505Z","name":"United
-        States, All Genders, All Ages","status":"ACTIVE","campaign_id":"c14cd226-1448-4e8d-b994-7e2fe620f7e7","type":"SNAP_ADS","targeting":{"regulated_content":false,"demographics":[{}],"geos":[{"country_code":"us"}],"enable_targeting_expansion":true,"auto_expansion_options":{"interest_expansion_option":{"enabled":true},"custom_audience_expansion_option":{"enabled":true}}},"targeting_reach_status":"VALID","placement":"UNSUPPORTED","billing_event":"IMPRESSION","auto_bid":true,"target_bid":false,"bid_strategy":"AUTO_BID","daily_budget_micro":5000000,"start_time":"2025-04-04T06:48:07.232Z","optimization_goal":"IMPRESSIONS","pixel_id":"94c4845c-9e8f-4131-850a-5a675be35ed6","delivery_constraint":"DAILY_BUDGET","pacing_type":"STANDARD","forced_view_setting":"NONE","creation_state":"PUBLISHED","delivery_status":["INVALID_EFFECTIVE_INVALID","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_UNKNOWN"],"skadnetwork_properties":{"status":"NEVER_ENROLLED"},"delivery_properties_version":1750755226148,"brand_safety_config":{"inventory_option":"FULL_INVENTORY"}}}]}'
-  recorded_at: Sun, 06 Jul 2025 11:38:23 GMT
+      string: '{"request_status":"SUCCESS","request_id":"51b1f5f3-113a-4d4c-9278-d452be02e6f0","paging":{},"adsquads":[{"sub_request_status":"SUCCESS","adsquad":{"id":"0853af89-5929-4c6d-ac6f-78310b434aac","updated_at":"2025-07-06T11:55:32.265Z","created_at":"2025-06-24T08:52:11.505Z","name":"United
+        States, All Genders, All Ages","status":"ACTIVE","campaign_id":"c14cd226-1448-4e8d-b994-7e2fe620f7e7","type":"SNAP_ADS","targeting":{"regulated_content":false,"demographics":[{"operation":"INCLUDE"}],"geos":[{"country_code":"us","operation":"INCLUDE"}],"enable_targeting_expansion":true,"auto_expansion_options":{"interest_expansion_option":{"enabled":true},"custom_audience_expansion_option":{"enabled":true}}},"targeting_reach_status":"VALID","placement":"UNSUPPORTED","billing_event":"IMPRESSION","auto_bid":true,"target_bid":false,"bid_strategy":"AUTO_BID","daily_budget_micro":5000000,"start_time":"2025-04-04T06:48:07.232Z","optimization_goal":"IMPRESSIONS","pixel_id":"94c4845c-9e8f-4131-850a-5a675be35ed6","delivery_constraint":"DAILY_BUDGET","pacing_type":"STANDARD","child_ad_type":"STORY","forced_view_setting":"NONE","creation_state":"PUBLISHED","delivery_status":["INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_UNKNOWN"],"skadnetwork_properties":{"status":"NEVER_ENROLLED"},"delivery_properties_version":1750755226148,"brand_safety_config":{"inventory_option":"FULL_INVENTORY"}}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:22 GMT
 recorded_with: VCR 6.3.1

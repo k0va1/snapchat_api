@@ -1,14 +1,65 @@
 ---
 http_interactions:
 - request:
-    method: delete
-    uri: https://adsapi.snapchat.com/v1/campaigns/38ef1dfa-28e8-4556-b75d-2158340e4852
+    method: post
+    uri: https://accounts.snapchat.com/login/oauth2/access_token
     body:
       encoding: US-ASCII
-      string: ''
+      string: client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&refresh_token=<REFRESH_TOKEN>&grant_type=refresh_token
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - API Gateway
+      Date:
+      - Tue, 29 Jul 2025 11:53:36 GMT
+      Content-Type:
+      - application/json
+      X-Envoy-Upstream-Service-Time:
+      - '124'
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 google, 1.1 google
+      Alt-Svc:
+      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "access_token": "eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..YfaxcYndOxKL5V4mxHCOww._Wz5H5xdo7xgstXAGp7Bb3tjckG4DKvRJQka99y3rYkx70d8LrCy-0sqA3CwSF4Yt10HRLdq9T3WVnyDBIdKM-n6MIeUFQyjJ_fsDjfB6XL6XJvl-RBEENMVjFE6f6_tOpNJhlKCdRSlhaVE9ITSql3nwXB79NKHilGyvuP06jtZfK_-_Ei6dl1JQd2rvc2KUGd5oSUd7MPNXwHAYS56lXun3dpeOAu9-TiBJ5Mh5LzjVMlbHs7AKPpCVGB4lFBDwGZhTrwCfWJTMYEXsBR5NiBjs7SUaSE0PWJPaBH65Rdxac7LoxkRyy_mdziVWpyRppK22nQNeheLJHvQjs3gwkfPU02g1jNOT-sbMig403Xyk_BNAzHDKntg9oYapjPTF739fOE-rokFCOC6qIxjZxp29OPzYU3jRy2PVCmlGP0nUjBTHNxTc-2AXi9RPEl72bmFV7xFUnyXr6INTCOK6bGeLcyGWrQKR2pWlZxiXoxVgjLZMIbY-X4dnqeUoRpAPGw-6nK74v6lqizUm0KcmtesN3uaLx20iK9g4EJvgG4h39ERqpP2tSGyxY2Y_MxdGCu17HC2rSRmsMoQKklupRmM7ZZwkEenjtM6I2_TT8EbEo3qeC_9utRokGnaB3H6MWVrCDOZv4n_XmAm-aaCgBPSYFwxqJkuGsKJPbHfaWFomj4XLA2Hjh5M5IA6sdEX_0e_CCZkzwr3DAiChV4zfu2VE6ng7-sD2pKCKb84oPA.sLMkR1C-zZcRFmuJlarfvQ",
+          "token_type": "Bearer",
+          "expires_in": 3600,
+          "refresh_token": "<REFRESH_TOKEN>",
+          "scope": "snapchat-marketing-api",
+          "id_token": ""
+        }
+  recorded_at: Tue, 29 Jul 2025 11:53:36 GMT
+- request:
+    method: post
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/campaigns
+    body:
+      encoding: UTF-8
+      string: '{"campaigns":[{"name":"Temporary Campaign","status":"ACTIVE","start_time":"2026-01-01T00:00:00.000Z","end_time":"2026-12-31T23:59:59.999Z","daily_budget_micro":20000000,"lifetime_spend_cap_micro":20000000}]}'
     headers:
       Authorization:
-      - Bearer <ACCESS_TOKEN>
+      - Bearer eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..YfaxcYndOxKL5V4mxHCOww._Wz5H5xdo7xgstXAGp7Bb3tjckG4DKvRJQka99y3rYkx70d8LrCy-0sqA3CwSF4Yt10HRLdq9T3WVnyDBIdKM-n6MIeUFQyjJ_fsDjfB6XL6XJvl-RBEENMVjFE6f6_tOpNJhlKCdRSlhaVE9ITSql3nwXB79NKHilGyvuP06jtZfK_-_Ei6dl1JQd2rvc2KUGd5oSUd7MPNXwHAYS56lXun3dpeOAu9-TiBJ5Mh5LzjVMlbHs7AKPpCVGB4lFBDwGZhTrwCfWJTMYEXsBR5NiBjs7SUaSE0PWJPaBH65Rdxac7LoxkRyy_mdziVWpyRppK22nQNeheLJHvQjs3gwkfPU02g1jNOT-sbMig403Xyk_BNAzHDKntg9oYapjPTF739fOE-rokFCOC6qIxjZxp29OPzYU3jRy2PVCmlGP0nUjBTHNxTc-2AXi9RPEl72bmFV7xFUnyXr6INTCOK6bGeLcyGWrQKR2pWlZxiXoxVgjLZMIbY-X4dnqeUoRpAPGw-6nK74v6lqizUm0KcmtesN3uaLx20iK9g4EJvgG4h39ERqpP2tSGyxY2Y_MxdGCu17HC2rSRmsMoQKklupRmM7ZZwkEenjtM6I2_TT8EbEo3qeC_9utRokGnaB3H6MWVrCDOZv4n_XmAm-aaCgBPSYFwxqJkuGsKJPbHfaWFomj4XLA2Hjh5M5IA6sdEX_0e_CCZkzwr3DAiChV4zfu2VE6ng7-sD2pKCKb84oPA.sLMkR1C-zZcRFmuJlarfvQ
       Content-Type:
       - application/json
       User-Agent:
@@ -23,17 +74,23 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 05 Jul 2025 18:42:16 GMT
+      - Tue, 29 Jul 2025 11:53:36 GMT
       X-Request-Id:
-      - d5ff191f-041d-4a0a-9f77-9eff91ad37c2
+      - c51c9154-2a94-47ad-b907-93571fd44c91
       Content-Length:
-      - '245'
+      - '793'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '82'
+      X-Rate-Limit-Reset:
+      - '1753790020000'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '95'
+      - '625'
       X-Envoy-Upstream-Service-Time:
-      - '96'
+      - '626'
       Server:
       - API Gateway
       X-Envoy-Decorator-Operation:
@@ -46,8 +103,61 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"request_status":"ERROR","request_id":"d5ff191f-041d-4a0a-9f77-9eff91ad37c2","campaigns":[{"sub_request_error_reason":"Error
-        code: E3004, message: Entity does not exist or you do not have permission
-        to access it","sub_request_status":"ERROR"}]}'
-  recorded_at: Sat, 05 Jul 2025 18:42:17 GMT
+      string: '{"request_status":"SUCCESS","request_id":"c51c9154-2a94-47ad-b907-93571fd44c91","campaigns":[{"sub_request_status":"SUCCESS","campaign":{"id":"7b16d7cd-6a88-453b-92b7-d7722abafb71","updated_at":"2025-07-29T11:53:37.260Z","created_at":"2025-07-29T11:53:37.260Z","name":"Temporary
+        Campaign","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","daily_budget_micro":20000000,"status":"ACTIVE","objective":"BRAND_AWARENESS","start_time":"2026-01-01T00:00:00.000Z","end_time":"2026-12-31T23:59:59.999Z","lifetime_spend_cap_micro":20000000,"delivery_status":["INVALID_TEST_ACCOUNT","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_START_TIME"],"creation_state":"PUBLISHED","objective_v2_properties":{"objective_v2_type":"AWARENESS_AND_ENGAGEMENT","is_auto_generated":true},"pacing_properties_version":0}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:37 GMT
+- request:
+    method: delete
+    uri: https://adsapi.snapchat.com/v1/campaigns/7b16d7cd-6a88-453b-92b7-d7722abafb71
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..YfaxcYndOxKL5V4mxHCOww._Wz5H5xdo7xgstXAGp7Bb3tjckG4DKvRJQka99y3rYkx70d8LrCy-0sqA3CwSF4Yt10HRLdq9T3WVnyDBIdKM-n6MIeUFQyjJ_fsDjfB6XL6XJvl-RBEENMVjFE6f6_tOpNJhlKCdRSlhaVE9ITSql3nwXB79NKHilGyvuP06jtZfK_-_Ei6dl1JQd2rvc2KUGd5oSUd7MPNXwHAYS56lXun3dpeOAu9-TiBJ5Mh5LzjVMlbHs7AKPpCVGB4lFBDwGZhTrwCfWJTMYEXsBR5NiBjs7SUaSE0PWJPaBH65Rdxac7LoxkRyy_mdziVWpyRppK22nQNeheLJHvQjs3gwkfPU02g1jNOT-sbMig403Xyk_BNAzHDKntg9oYapjPTF739fOE-rokFCOC6qIxjZxp29OPzYU3jRy2PVCmlGP0nUjBTHNxTc-2AXi9RPEl72bmFV7xFUnyXr6INTCOK6bGeLcyGWrQKR2pWlZxiXoxVgjLZMIbY-X4dnqeUoRpAPGw-6nK74v6lqizUm0KcmtesN3uaLx20iK9g4EJvgG4h39ERqpP2tSGyxY2Y_MxdGCu17HC2rSRmsMoQKklupRmM7ZZwkEenjtM6I2_TT8EbEo3qeC_9utRokGnaB3H6MWVrCDOZv4n_XmAm-aaCgBPSYFwxqJkuGsKJPbHfaWFomj4XLA2Hjh5M5IA6sdEX_0e_CCZkzwr3DAiChV4zfu2VE6ng7-sD2pKCKb84oPA.sLMkR1C-zZcRFmuJlarfvQ
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:37 GMT
+      X-Request-Id:
+      - e8926eda-0ca3-46d4-85ef-90f431c1407e
+      Content-Length:
+      - '95'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '81'
+      X-Rate-Limit-Reset:
+      - '1753790020000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '537'
+      X-Envoy-Upstream-Service-Time:
+      - '538'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"e8926eda-0ca3-46d4-85ef-90f431c1407e","campaigns":[]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:38 GMT
 recorded_with: VCR 6.3.1

@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/ads/bb05b099-140f-47ad-ab96-827960fbdf16/stats?end_time=2025-07-31T00:00:00%2B02:00&granularity=DAY&start_time=2025-07-01T00:00:00%2B02:00
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:21 GMT
+      X-Request-Id:
+      - 4f7017ee-4db1-4ead-82ca-124f2b124223
+      X-Rate-Limit-Limit:
+      - '1666'
+      X-Rate-Limit-Remaining:
+      - '1665'
+      X-Rate-Limit-Reset:
+      - '1753790005000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '63'
+      X-Envoy-Upstream-Service-Time:
+      - '65'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_status":"SUCCESS","request_id":"4f7017ee-4db1-4ead-82ca-124f2b124223","timeseries_stats":[{"sub_request_status":"SUCCESS","timeseries_stat":{"id":"bb05b099-140f-47ad-ab96-827960fbdf16","type":"AD","granularity":"DAY","start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","finalized_data_end_time":"2025-07-29T09:00:00.000Z","timeseries":[{"start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-02T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-02T00:00:00.000+02:00","end_time":"2025-07-03T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-03T00:00:00.000+02:00","end_time":"2025-07-04T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-04T00:00:00.000+02:00","end_time":"2025-07-05T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-05T00:00:00.000+02:00","end_time":"2025-07-06T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-06T00:00:00.000+02:00","end_time":"2025-07-07T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-07T00:00:00.000+02:00","end_time":"2025-07-08T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-08T00:00:00.000+02:00","end_time":"2025-07-09T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-09T00:00:00.000+02:00","end_time":"2025-07-10T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-10T00:00:00.000+02:00","end_time":"2025-07-11T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-11T00:00:00.000+02:00","end_time":"2025-07-12T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-12T00:00:00.000+02:00","end_time":"2025-07-13T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-13T00:00:00.000+02:00","end_time":"2025-07-14T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-14T00:00:00.000+02:00","end_time":"2025-07-15T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-15T00:00:00.000+02:00","end_time":"2025-07-16T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-16T00:00:00.000+02:00","end_time":"2025-07-17T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-17T00:00:00.000+02:00","end_time":"2025-07-18T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-18T00:00:00.000+02:00","end_time":"2025-07-19T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-19T00:00:00.000+02:00","end_time":"2025-07-20T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-20T00:00:00.000+02:00","end_time":"2025-07-21T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-21T00:00:00.000+02:00","end_time":"2025-07-22T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-22T00:00:00.000+02:00","end_time":"2025-07-23T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-23T00:00:00.000+02:00","end_time":"2025-07-24T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-24T00:00:00.000+02:00","end_time":"2025-07-25T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-25T00:00:00.000+02:00","end_time":"2025-07-26T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-26T00:00:00.000+02:00","end_time":"2025-07-27T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-27T00:00:00.000+02:00","end_time":"2025-07-28T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-28T00:00:00.000+02:00","end_time":"2025-07-29T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-29T00:00:00.000+02:00","end_time":"2025-07-30T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-30T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}}],"attributing_party":"SNAPCHAT"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:22 GMT
+recorded_with: VCR 6.3.1

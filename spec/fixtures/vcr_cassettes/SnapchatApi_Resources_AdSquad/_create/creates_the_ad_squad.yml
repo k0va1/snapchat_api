@@ -23,21 +23,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 06 Jul 2025 11:38:24 GMT
+      - Tue, 29 Jul 2025 11:53:23 GMT
       X-Request-Id:
-      - 66f66910-6ea1-4fe2-ae4e-af477ebf1ac5
+      - 326376ac-3f73-47a0-b930-f1d1c0b8c82d
       X-Rate-Limit-Limit:
       - '83'
       X-Rate-Limit-Remaining:
       - '82'
       X-Rate-Limit-Reset:
-      - '1751801905000'
+      - '1753790005000'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '915'
+      - '1134'
       X-Envoy-Upstream-Service-Time:
-      - '916'
+      - '1136'
       Vary:
       - Accept-Encoding
       Server:
@@ -54,12 +54,12 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"request_status":"SUCCESS","request_id":"66f66910-6ea1-4fe2-ae4e-af477ebf1ac5","adsquads":[{"sub_request_status":"SUCCESS","adsquad":{"id":"83659606-52fc-4c51-b6c6-deeb4634c947","updated_at":"2025-07-06T11:38:25.057Z","created_at":"2025-07-06T11:38:25.057Z","name":"Ad
-        Squad Uno","status":"PAUSED","campaign_id":"ce00d8e1-ebb1-4885-8348-cf5c20375179","type":"SNAP_ADS","targeting":{"regulated_content":false,"geos":[{"country_code":"us"}],"enable_targeting_expansion":true,"auto_expansion_options":{"interest_expansion_option":{"enabled":true},"custom_audience_expansion_option":{"enabled":true}}},"targeting_reach_status":"VALID","placement_v2":{"config":"AUTOMATIC"},"billing_event":"IMPRESSION","bid_micro":100000,"auto_bid":false,"target_bid":false,"bid_strategy":"LOWEST_COST_WITH_MAX_BID","daily_budget_micro":1000000,"start_time":"2025-08-11T22:03:58.869Z","optimization_goal":"IMPRESSIONS","delivery_constraint":"DAILY_BUDGET","pacing_type":"STANDARD","creation_state":"PUBLISHED","delivery_status":["INVALID_NOT_ACTIVE","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_START_TIME_AFTER_END_TIME","INVALID_START_TIME","INVALID_EFFECTIVE_INVALID"],"skadnetwork_properties":{"status":"NEVER_ENROLLED"}}}]}'
-  recorded_at: Sun, 06 Jul 2025 11:38:25 GMT
+      string: '{"request_status":"SUCCESS","request_id":"326376ac-3f73-47a0-b930-f1d1c0b8c82d","adsquads":[{"sub_request_status":"SUCCESS","adsquad":{"id":"de16b229-4323-4176-9a5a-28078c1f5754","updated_at":"2025-07-29T11:53:23.956Z","created_at":"2025-07-29T11:53:23.956Z","name":"Ad
+        Squad Uno","status":"PAUSED","campaign_id":"ce00d8e1-ebb1-4885-8348-cf5c20375179","type":"SNAP_ADS","targeting":{"regulated_content":false,"geos":[{"country_code":"us"}],"enable_targeting_expansion":true,"auto_expansion_options":{"interest_expansion_option":{"enabled":true},"custom_audience_expansion_option":{"enabled":true}}},"targeting_reach_status":"VALID","placement_v2":{"config":"AUTOMATIC"},"billing_event":"IMPRESSION","bid_micro":100000,"auto_bid":false,"target_bid":false,"bid_strategy":"LOWEST_COST_WITH_MAX_BID","daily_budget_micro":1000000,"start_time":"2025-08-11T22:03:58.869Z","optimization_goal":"IMPRESSIONS","delivery_constraint":"DAILY_BUDGET","pacing_type":"STANDARD","creation_state":"PUBLISHED","delivery_status":["INVALID_NOT_ACTIVE","INVALID_START_TIME_AFTER_END_TIME","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_START_TIME"],"skadnetwork_properties":{"status":"NEVER_ENROLLED"}}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:24 GMT
 - request:
     method: delete
-    uri: https://adsapi.snapchat.com/v1/adsquads/83659606-52fc-4c51-b6c6-deeb4634c947
+    uri: https://adsapi.snapchat.com/v1/adsquads/de16b229-4323-4176-9a5a-28078c1f5754
     body:
       encoding: US-ASCII
       string: ''
@@ -80,23 +80,23 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 06 Jul 2025 11:38:25 GMT
+      - Tue, 29 Jul 2025 11:53:24 GMT
       X-Request-Id:
-      - 54910628-5674-48ff-9d44-72577c0528ca
+      - f50ed4cc-5bce-48c7-b0ae-170926d69ed5
       Content-Length:
       - '94'
       X-Rate-Limit-Limit:
       - '83'
       X-Rate-Limit-Remaining:
-      - '82'
+      - '81'
       X-Rate-Limit-Reset:
-      - '1751801910000'
+      - '1753790005000'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '522'
+      - '536'
       X-Envoy-Upstream-Service-Time:
-      - '523'
+      - '536'
       Server:
       - API Gateway
       X-Envoy-Decorator-Operation:
@@ -109,6 +109,6 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"request_status":"SUCCESS","request_id":"54910628-5674-48ff-9d44-72577c0528ca","adsquads":[]}'
-  recorded_at: Sun, 06 Jul 2025 11:38:26 GMT
+      string: '{"request_status":"SUCCESS","request_id":"f50ed4cc-5bce-48c7-b0ae-170926d69ed5","adsquads":[]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:25 GMT
 recorded_with: VCR 6.3.1

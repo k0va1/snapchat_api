@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/creatives
+    body:
+      encoding: UTF-8
+      string: '{"creatives":[{"name":"Test Creative","type":"SNAP_AD","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","headline":"Test
+        Headline","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"}}]}'
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:40 GMT
+      X-Request-Id:
+      - bc48793c-4ce7-4262-b45a-35dfc5b8a713
+      Content-Length:
+      - '707'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '82'
+      X-Rate-Limit-Reset:
+      - '1753790025000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '1099'
+      X-Envoy-Upstream-Service-Time:
+      - '1100'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"bc48793c-4ce7-4262-b45a-35dfc5b8a713","creatives":[{"sub_request_status":"SUCCESS","creative":{"id":"85946858-97f8-46fb-8615-113f66d33f5d","updated_at":"2025-07-29T11:53:41.363Z","created_at":"2025-07-29T11:53:41.363Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"-1388861109"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:41 GMT
+recorded_with: VCR 6.3.1
