@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/k0va1/snapchat_api/compare/v0.1.3...v0.1.4) (2025-07-29)
+
+
+### Bug Fixes
+
+* rename license file ([5b1ab3e](https://github.com/k0va1/snapchat_api/commit/5b1ab3eef2d934c67a1c3895070c13303a9ef802))
+
 ## [0.1.3](https://github.com/k0va1/snapchat_api/compare/v0.1.2...v0.1.3) (2025-07-29)
 
 
