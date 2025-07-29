@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/creatives
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:39 GMT
+      X-Request-Id:
+      - 68c80b58-3f60-4cc0-ab87-9a99ba087db9
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '77'
+      X-Envoy-Upstream-Service-Time:
+      - '78'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_status":"SUCCESS","request_id":"68c80b58-3f60-4cc0-ab87-9a99ba087db9","paging":{},"creatives":[{"sub_request_status":"SUCCESS","creative":{"id":"0f0b31b9-7615-4c0c-815b-897a6f747533","updated_at":"2025-07-06T15:58:08.434Z","created_at":"2025-07-06T15:58:08.434Z","name":"Test
+        Creative for Deletion","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline for Deletion","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"1683501028"}},{"sub_request_status":"SUCCESS","creative":{"id":"0f3f6368-952c-4f6f-b108-2bd438ff825b","updated_at":"2025-07-29T11:44:38.985Z","created_at":"2025-07-29T11:44:38.985Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"66569471"}},{"sub_request_status":"SUCCESS","creative":{"id":"12d5c2df-69e9-438d-9ad5-8a3fe4bf9354","updated_at":"2025-07-06T11:55:32.868Z","created_at":"2025-07-06T11:55:32.868Z","name":"test
+        add","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"WEB_VIEW","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"forced_view_eligibility":"NONE","headline":"test","call_to_action":"VIEW","cta_color_display_mode":"AUTO_COLOR_DETECTION","render_type":"STATIC","top_snap_media_id":"b62ab493-b7d3-46c8-8c74-8006dcd96be5","top_snap_crop_position":"MIDDLE","web_view_properties":{"url":"https://www.youtube.com/","allow_snap_javascript_sdk":false,"use_immersive_mode":false,"deep_link_urls":[],"block_preload":true},"ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"-1861502155","creator_partnership_type":"NONE"}},{"sub_request_status":"SUCCESS","creative":{"id":"2179a2a5-f00d-4fc5-80a6-f7269e509170","updated_at":"2025-07-29T11:53:17.766Z","created_at":"2025-07-29T11:53:17.766Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"-1158175058"}},{"sub_request_status":"SUCCESS","creative":{"id":"2e963b8c-2999-48ed-a0df-e6fe0b312626","updated_at":"2025-07-06T15:46:13.274Z","created_at":"2025-07-06T15:46:13.274Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"-201157217"}},{"sub_request_status":"SUCCESS","creative":{"id":"37677184-0490-4711-b35e-8d12d5476895","updated_at":"2025-07-06T15:58:29.144Z","created_at":"2025-07-06T15:58:29.144Z","name":"Test
+        Creative for Deletion","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline for Deletion","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"1514888853"}},{"sub_request_status":"SUCCESS","creative":{"id":"4fee52ca-8c53-4635-b005-0adcb6988586","updated_at":"2025-07-29T11:53:12.211Z","created_at":"2025-07-29T11:53:12.211Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"270733701"}},{"sub_request_status":"SUCCESS","creative":{"id":"509cd5cf-5211-440c-a92f-c718f63dbb87","updated_at":"2025-07-06T15:55:13.687Z","created_at":"2025-07-06T15:55:12.572Z","name":"Updated
+        Creative Name","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"1658395001"}},{"sub_request_status":"SUCCESS","creative":{"id":"56eb79a4-13e9-4307-b88b-f1202a661fb2","updated_at":"2025-07-06T11:55:33.032Z","created_at":"2025-07-06T11:55:33.032Z","name":"test
+        add","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"PREVIEW","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"test","render_type":"STATIC","top_snap_crop_position":"MIDDLE","preview_properties":{"preview_media_id":"47cab8a9-74c9-4107-8e55-180c00de5177","logo_media_id":"40af61c8-dbc2-4eff-a99a-37d3e9bb2828","preview_headline":"test"},"ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"1603685044","creator_partnership_type":"NONE"}},{"sub_request_status":"SUCCESS","creative":{"id":"5a6eac6d-74ee-4b4f-bc18-8a62000e1243","updated_at":"2025-07-29T11:31:58.373Z","created_at":"2025-07-29T11:31:58.373Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"153601408"}},{"sub_request_status":"SUCCESS","creative":{"id":"65c483a3-c030-406c-be17-c16de2f5a8c4","updated_at":"2025-07-06T15:58:06.959Z","created_at":"2025-07-06T15:58:05.865Z","name":"Updated
+        Creative Name","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"729797697"}},{"sub_request_status":"SUCCESS","creative":{"id":"8f9d8d06-7c0e-462b-9d76-23dfea9b9bbc","updated_at":"2025-07-06T11:55:34.399Z","created_at":"2025-07-06T11:55:34.399Z","name":"test
+        add","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"COMPOSITE","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"playback_type":"LOOPING","headline":"test","render_type":"STATIC","top_snap_crop_position":"MIDDLE","composite_properties":{"creative_ids":["12d5c2df-69e9-438d-9ad5-8a3fe4bf9354"]},"ad_product":"SNAP_AD","preview_creative_id":"56eb79a4-13e9-4307-b88b-f1202a661fb2","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"62416771","creator_partnership_type":"NONE"}},{"sub_request_status":"SUCCESS","creative":{"id":"ac5a77e6-ba4b-4232-91ae-699a9353a17d","updated_at":"2025-07-06T15:58:04.322Z","created_at":"2025-07-06T15:58:04.322Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"-1590506074"}},{"sub_request_status":"SUCCESS","creative":{"id":"c30caed9-1993-4723-9fd6-704441ce0e1a","updated_at":"2025-07-06T15:55:10.771Z","created_at":"2025-07-06T15:55:10.771Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"1541512478"}},{"sub_request_status":"SUCCESS","creative":{"id":"db04dec2-bbcd-482a-bf9b-1e66c1e83e11","updated_at":"2025-07-06T15:55:15.062Z","created_at":"2025-07-06T15:55:15.062Z","name":"Test
+        Creative for Deletion","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline for Deletion","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"-466792272"}},{"sub_request_status":"SUCCESS","creative":{"id":"f7125748-11d7-4025-b76c-678c55ecb143","updated_at":"2025-07-29T11:45:43.640Z","created_at":"2025-07-29T11:45:43.640Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"-970172878"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:40 GMT
+recorded_with: VCR 6.3.1

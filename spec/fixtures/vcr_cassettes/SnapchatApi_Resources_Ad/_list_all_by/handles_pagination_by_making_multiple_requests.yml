@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/ads
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:09 GMT
+      X-Request-Id:
+      - 30dbc270-e194-4b6f-ab4b-eeac4515f048
+      Content-Length:
+      - '571'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '401'
+      X-Envoy-Upstream-Service-Time:
+      - '402'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"30dbc270-e194-4b6f-ab4b-eeac4515f048","paging":{},"ads":[{"sub_request_status":"SUCCESS","ad":{"id":"bb05b099-140f-47ad-ab96-827960fbdf16","updated_at":"2025-07-06T11:55:52.064Z","created_at":"2025-07-06T11:55:35.938Z","name":"test
+        add","ad_squad_id":"0853af89-5929-4c6d-ac6f-78310b434aac","creative_id":"8f9d8d06-7c0e-462b-9d76-23dfea9b9bbc","status":"PAUSED","type":"STORY","render_type":"STATIC","review_status":"APPROVED","delivery_status":["INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_NOT_ACTIVE","INVALID_EFFECTIVE_INVALID"]}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:09 GMT
+recorded_with: VCR 6.3.1

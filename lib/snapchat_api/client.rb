@@ -6,7 +6,7 @@ require "snapchat_api/error"
 
 module SnapchatApi
   class Client
-    attr_accessor :client_id, :client_secret, :access_token, :refresh_token, :debug
+    attr_accessor :client_id, :client_secret, :access_token, :refresh_token, :debug, :redirect_uri
 
     ADS_HOST = "https://adsapi.snapchat.com"
     ACCOUNTS_HOST = "https://accounts.snapchat.com"
@@ -14,9 +14,10 @@ module SnapchatApi
     ADS_CURRENT_API_PATH = "v1"
     ADS_URL = "#{ADS_HOST}/#{ADS_CURRENT_API_PATH}"
 
-    def initialize(client_id:, client_secret:, access_token: nil, refresh_token: nil, debug: false)
+    def initialize(client_id:, client_secret:, redirect_uri: nil, access_token: nil, refresh_token: nil, debug: false)
       @client_id = client_id
       @client_secret = client_secret
+      @redirect_uri = redirect_uri
       @access_token = access_token
       @refresh_token = refresh_token
       @debug = debug
@@ -63,6 +64,76 @@ module SnapchatApi
       handle_response(response)
     end
 
+    def refresh_tokens!
+      response = Faraday.post("#{ACCOUNTS_HOST}/login/oauth2/access_token") do |req|
+        req.headers["Content-Type"] = "application/x-www-form-urlencoded"
+        req.body = URI.encode_www_form(
+          client_id: @client_id,
+          client_secret: @client_secret,
+          refresh_token: @refresh_token,
+          grant_type: "refresh_token"
+        )
+      end
+      handle_response(response)
+      body = JSON.parse(response.body)
+
+      @access_token = body["access_token"]
+      @refresh_token = body["refresh_token"]
+    end
+
+    def get_authorization_url(scope: "snapchat-marketing-api")
+      params = {
+        client_id: @client_id,
+        redirect_uri: redirect_uri,
+        response_type: "code",
+        scope: scope,
+        state: state
+      }
+
+      "https://accounts.snapchat.com/accounts/oauth2/auth?#{URI.encode_www_form(params)}"
+    end
+
+    def get_tokens(code:)
+      response = Faraday.post("#{ACCOUNTS_HOST}/login/oauth2/access_token") do |req|
+        req.headers["Content-Type"] = "application/x-www-form-urlencoded"
+        req.body = URI.encode_www_form({
+          client_id: @client_id,
+          client_secret: @client_secret,
+          code: code,
+          grant_type: "authorization_code",
+          redirect_uri: redirect_uri
+        })
+      end
+      handle_response(response)
+      JSON.parse(response.body)
+    end
+
+    def accounts
+      @accounts ||= SnapchatApi::Resources::Account.new(self)
+    end
+
+    def campaigns
+      @campaigns ||= SnapchatApi::Resources::Campaign.new(self)
+    end
+
+    def ad_squads
+      @ad_squads ||= SnapchatApi::Resources::AdSquad.new(self)
+    end
+
+    def media
+      @media ||= SnapchatApi::Resources::Media.new(self)
+    end
+
+    def creatives
+      @creatives ||= SnapchatApi::Resources::Creative.new(self)
+    end
+
+    def ads
+      @ads ||= SnapchatApi::Resources::Ad.new(self)
+    end
+
+    private
+
     def handle_response(response)
       return response if response.success?
 
@@ -86,42 +157,6 @@ module SnapchatApi
       end
 
       raise klass.new(error_message || "HTTP #{status}", status, body)
-    end
-
-    def refresh_tokens!
-      response = Faraday.post("#{ACCOUNTS_HOST}/login/oauth2/access_token") do |req|
-        req.headers["Content-Type"] = "application/x-www-form-urlencoded"
-        req.body = URI.encode_www_form(
-          client_id: @client_id,
-          client_secret: @client_secret,
-          refresh_token: @refresh_token,
-          grant_type: "refresh_token"
-        )
-      end
-      handle_response(response)
-      body = JSON.parse(response.body)
-
-      @access_token = body["access_token"]
-      @refresh_token = body["refresh_token"]
-    end
-
-    def auth
-    end
-
-    def accounts
-      @accounts ||= SnapchatApi::Resources::Account.new(self)
-    end
-
-    def campaigns
-      @campaigns ||= SnapchatApi::Resources::Campaign.new(self)
-    end
-
-    def ad_squads
-      @ad_squads ||= SnapchatApi::Resources::AdSquad.new(self)
-    end
-
-    def media
-      @media ||= SnapchatApi::Resources::Media.new(self)
     end
   end
 end

@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/creatives/8f9d8d06-7c0e-462b-9d76-23dfea9b9bbc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:40 GMT
+      X-Request-Id:
+      - 23d23949-e166-4fe0-86ef-a755b3226652
+      Content-Length:
+      - '835'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '113'
+      X-Envoy-Upstream-Service-Time:
+      - '114'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"23d23949-e166-4fe0-86ef-a755b3226652","creatives":[{"sub_request_status":"SUCCESS","creative":{"id":"8f9d8d06-7c0e-462b-9d76-23dfea9b9bbc","updated_at":"2025-07-06T11:55:34.399Z","created_at":"2025-07-06T11:55:34.399Z","name":"test
+        add","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"COMPOSITE","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"playback_type":"LOOPING","headline":"test","render_type":"STATIC","top_snap_crop_position":"MIDDLE","composite_properties":{"creative_ids":["12d5c2df-69e9-438d-9ad5-8a3fe4bf9354"]},"ad_product":"SNAP_AD","preview_creative_id":"56eb79a4-13e9-4307-b88b-f1202a661fb2","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"62416771","creator_partnership_type":"NONE"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:40 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/creatives
+    body:
+      encoding: UTF-8
+      string: '{"creatives":[{"name":"Test Creative","type":"SNAP_AD","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","headline":"Test
+        Headline","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"}}]}'
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:41 GMT
+      X-Request-Id:
+      - 979cb009-f6eb-471a-813d-ef1e0fecf0b7
+      Content-Length:
+      - '705'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '81'
+      X-Rate-Limit-Reset:
+      - '1753790025000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '1052'
+      X-Envoy-Upstream-Service-Time:
+      - '1053'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"979cb009-f6eb-471a-813d-ef1e0fecf0b7","creatives":[{"sub_request_status":"SUCCESS","creative":{"id":"627e0802-fb47-4591-b34d-b312bee8d5c7","updated_at":"2025-07-29T11:53:42.650Z","created_at":"2025-07-29T11:53:42.650Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"904333221"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:43 GMT
+- request:
+    method: put
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/creatives
+    body:
+      encoding: UTF-8
+      string: '{"creatives":[{"id":"627e0802-fb47-4591-b34d-b312bee8d5c7","updated_at":"2025-07-29T11:53:42.650Z","created_at":"2025-07-29T11:53:42.650Z","name":"Test
+        Creative","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"904333221","name":"Updated
+        Creative Name","id":"627e0802-fb47-4591-b34d-b312bee8d5c7","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4"}]}'
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:43 GMT
+      X-Request-Id:
+      - ffbef959-b0e5-4895-b25c-8bea51425b88
+      Content-Length:
+      - '955'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '82'
+      X-Rate-Limit-Reset:
+      - '1753790025000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '828'
+      X-Envoy-Upstream-Service-Time:
+      - '828'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"ffbef959-b0e5-4895-b25c-8bea51425b88","creatives":[{"sub_request_status":"SUCCESS","creative":{"id":"627e0802-fb47-4591-b34d-b312bee8d5c7","updated_at":"2025-07-29T11:53:43.681Z","created_at":"2025-07-29T11:53:42.650Z","created_by_app_id":"1debb989-3a6f-4cc7-aa9b-099c4c047eef","created_by_user":"e905030e-0f40-4dba-a553-c903d4a352c7","last_updated_by_app_id":"1debb989-3a6f-4cc7-aa9b-099c4c047eef","last_updated_by_user":"e905030e-0f40-4dba-a553-c903d4a352c7","name":"Updated
+        Creative Name","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"SNAP_AD","packaging_status":"SUCCESS","review_status":"PENDING_REVIEW","shareable":true,"headline":"Test
+        Headline","render_type":"STATIC","top_snap_media_id":"e2412304-2bb4-4145-aea2-8498414892f8","top_snap_crop_position":"MIDDLE","ad_product":"SNAP_AD","profile_properties":{"profile_id":"c9ba7b74-06a2-4ea2-8c05-355287355971"},"semantic_id":"-64764044"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:44 GMT
+recorded_with: VCR 6.3.1

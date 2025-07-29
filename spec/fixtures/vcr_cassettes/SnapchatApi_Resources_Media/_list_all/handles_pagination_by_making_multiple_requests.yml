@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/media
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:44 GMT
+      X-Request-Id:
+      - e36d6f32-2fee-426c-bc94-e6e1903e29ae
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '75'
+      X-Envoy-Upstream-Service-Time:
+      - '76'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_status":"SUCCESS","request_id":"e36d6f32-2fee-426c-bc94-e6e1903e29ae","paging":{},"media":[{"sub_request_status":"SUCCESS","media":{"id":"114d5da2-0e98-4727-8ae4-628ebe247be6","updated_at":"2025-07-06T13:34:45.350Z","created_at":"2025-07-06T13:34:45.350Z","name":"Test
+        Upload Media","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"PENDING_UPLOAD","is_demo_media":false,"visibility":"VISIBLE"}},{"sub_request_status":"SUCCESS","media":{"id":"1b2f87e1-25c0-4bd2-8879-b834704f8eb0","updated_at":"2025-06-24T08:48:54.618Z","created_at":"2025-06-24T08:48:42.315Z","name":"vinyl.png","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"READY","file_name":"c9b34a69-55b1-4940-9386-78334c338a9b.png","download_link":"https://storage.googleapis.com/ad-manager-creatives-production-europe/1b2f87e1-25c0-4bd2-8879-b834704f8eb0/c9b34a69-55b1-4940-9386-78334c338a9b.png","image_metadata":{"height_px":1920,"width_px":1080,"image_format":"PNG"},"file_size_in_bytes":2490939,"is_demo_media":false,"hash":"0BIhIw==","visibility":"VISIBLE","media_usages":["TOP_SNAP"],"tile_media_id":"7ca7215d-76b0-43a3-9e6a-99573bf30f60"}},{"sub_request_status":"SUCCESS","media":{"id":"27c7ac14-b56e-4d48-a8be-80d04f5dc7f6","updated_at":"2025-07-06T13:32:29.397Z","created_at":"2025-07-06T13:32:29.397Z","name":"Test
+        Media for Deletion","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"PENDING_UPLOAD","is_demo_media":false,"visibility":"VISIBLE"}},{"sub_request_status":"SUCCESS","media":{"id":"2d2a7f1e-b2dd-4c15-9e07-8310210365e5","updated_at":"2025-07-28T14:46:40.853Z","created_at":"2025-07-28T14:46:38.562Z","name":"Test
+        Upload Media","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"READY","file_name":"252a5996-3724-4235-8bcb-26224b7732ab.png","download_link":"https://storage.googleapis.com/ad-manager-creatives-production-europe/2d2a7f1e-b2dd-4c15-9e07-8310210365e5/252a5996-3724-4235-8bcb-26224b7732ab.png","image_metadata":{"height_px":1920,"width_px":1080,"image_format":"PNG"},"file_size_in_bytes":745046,"is_demo_media":false,"hash":"xh5uzA==","visibility":"VISIBLE","media_usages":["TOP_SNAP"]}},{"sub_request_status":"SUCCESS","media":{"id":"40af61c8-dbc2-4eff-a99a-37d3e9bb2828","updated_at":"2025-07-06T11:55:10.414Z","created_at":"2025-07-06T11:55:08.081Z","name":"vinyl.png","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"READY","file_name":"f786667a-95e5-48ac-aba1-8d833f306125.png","download_link":"https://storage.googleapis.com/ad-manager-creatives-production-europe/40af61c8-dbc2-4eff-a99a-37d3e9bb2828/f786667a-95e5-48ac-aba1-8d833f306125.png","image_metadata":{"height_px":284,"width_px":993,"image_format":"PNG"},"file_size_in_bytes":429359,"is_demo_media":false,"hash":"4sCapg==","visibility":"VISIBLE","media_usages":["PREVIEW_LOGO"]}},{"sub_request_status":"SUCCESS","media":{"id":"47cab8a9-74c9-4107-8e55-180c00de5177","updated_at":"2025-07-06T11:50:27.981Z","created_at":"2025-07-06T11:50:27.981Z","name":"vinyl.png","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"READY","file_name":"d4a20de2-f00f-4400-b59f-de88e06ab487.png","download_link":"https://cf-st.sc-cdn.net/d/9KN9k22dbBRGuP5TrXay4.999?mo=GkUaCjICBH1IAlAPYAFaD0Fkc0ltYWdlVG9wU25hcKIBBwjnByICEgCiAQcI1QciAhIAogEHCNQHIgISAKIBBwjkByICEgA%3D&uc=15","image_metadata":{"height_px":1920,"width_px":1080,"image_format":"WEBP"},"file_size_in_bytes":40194,"is_demo_media":false,"hash":"69114A8B","visibility":"INVISIBLE","content_source_type":"AUTO_GENERATED_TILE","media_usages":["PREVIEW_IMAGE"]}},{"sub_request_status":"SUCCESS","media":{"id":"74e69799-0e68-4fbf-a5d0-388192e3b77f","updated_at":"2025-07-06T13:30:20.708Z","created_at":"2025-07-06T13:30:20.708Z","name":"Test
+        Upload Media","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"PENDING_UPLOAD","is_demo_media":false,"visibility":"VISIBLE"}},{"sub_request_status":"SUCCESS","media":{"id":"7ca7215d-76b0-43a3-9e6a-99573bf30f60","updated_at":"2025-06-24T08:48:54.567Z","created_at":"2025-06-24T08:48:54.567Z","name":"vinyl.png","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"READY","file_name":"c9b34a69-55b1-4940-9386-78334c338a9b.png","download_link":"https://cf-st.sc-cdn.net/d/vdhlHJpSoYNDC5jcrOOTI.999?mo=GkUaCjICBH1IAlAPYAFaD0Fkc0ltYWdlVG9wU25hcKIBBwjnByICEgCiAQcI1QciAhIAogEHCNQHIgISAKIBBwjkByICEgA%3D&uc=15","image_metadata":{"height_px":1920,"width_px":1080,"image_format":"WEBP"},"file_size_in_bytes":40194,"is_demo_media":false,"hash":"69114A8B","visibility":"INVISIBLE","content_source_type":"AUTO_GENERATED_TILE","media_usages":["PREVIEW_IMAGE"]}},{"sub_request_status":"SUCCESS","media":{"id":"b62ab493-b7d3-46c8-8c74-8006dcd96be5","updated_at":"2025-07-06T11:55:32.153Z","created_at":"2025-07-06T11:50:19.101Z","name":"vinyl.png","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"READY","file_name":"d4a20de2-f00f-4400-b59f-de88e06ab487.png","download_link":"https://storage.googleapis.com/ad-manager-creatives-production-europe/b62ab493-b7d3-46c8-8c74-8006dcd96be5/d4a20de2-f00f-4400-b59f-de88e06ab487.png","image_metadata":{"height_px":1920,"width_px":1080,"image_format":"PNG"},"file_size_in_bytes":2490939,"is_demo_media":false,"hash":"0BIhIw==","visibility":"VISIBLE","media_usages":["TOP_SNAP"],"tile_media_id":"47cab8a9-74c9-4107-8e55-180c00de5177"}},{"sub_request_status":"SUCCESS","media":{"id":"bee91232-aa00-4afa-8423-5b2d2b77155e","updated_at":"2025-07-06T13:30:19.826Z","created_at":"2025-07-06T13:30:19.826Z","name":"Test
+        Media","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"PENDING_UPLOAD","is_demo_media":false,"visibility":"VISIBLE"}},{"sub_request_status":"SUCCESS","media":{"id":"e2412304-2bb4-4145-aea2-8498414892f8","updated_at":"2025-07-06T15:46:12.982Z","created_at":"2025-07-06T13:40:08.420Z","name":"Test
+        Upload Media","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"READY","file_name":"d225be76-07e4-41a8-bee7-4e01ba330447.png","download_link":"https://storage.googleapis.com/ad-manager-creatives-production-europe/e2412304-2bb4-4145-aea2-8498414892f8/d225be76-07e4-41a8-bee7-4e01ba330447.png","image_metadata":{"height_px":1920,"width_px":1080,"image_format":"PNG"},"file_size_in_bytes":745046,"is_demo_media":false,"hash":"xh5uzA==","visibility":"VISIBLE","media_usages":["TOP_SNAP"]}},{"sub_request_status":"SUCCESS","media":{"id":"eff5f69e-10eb-4bb0-92bd-f831551b44d3","updated_at":"2025-07-28T14:46:37.829Z","created_at":"2025-07-28T14:46:37.829Z","name":"Test
+        Media","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"PENDING_UPLOAD","is_demo_media":false,"visibility":"VISIBLE"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:44 GMT
+recorded_with: VCR 6.3.1

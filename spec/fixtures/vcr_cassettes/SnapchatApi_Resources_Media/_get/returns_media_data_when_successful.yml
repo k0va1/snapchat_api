@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/media/1b2f87e1-25c0-4bd2-8879-b834704f8eb0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:44 GMT
+      X-Request-Id:
+      - 03f7ee79-6b4e-4c83-9cc4-88a1c467ebca
+      Content-Length:
+      - '838'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '156'
+      X-Envoy-Upstream-Service-Time:
+      - '157'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"03f7ee79-6b4e-4c83-9cc4-88a1c467ebca","media":[{"sub_request_status":"SUCCESS","media":{"id":"1b2f87e1-25c0-4bd2-8879-b834704f8eb0","updated_at":"2025-06-24T08:48:54.618Z","created_at":"2025-06-24T08:48:42.315Z","name":"vinyl.png","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","type":"IMAGE","media_status":"READY","file_name":"c9b34a69-55b1-4940-9386-78334c338a9b.png","download_link":"https://storage.googleapis.com/ad-manager-creatives-production-europe/1b2f87e1-25c0-4bd2-8879-b834704f8eb0/c9b34a69-55b1-4940-9386-78334c338a9b.png","image_metadata":{"height_px":1920,"width_px":1080,"image_format":"PNG"},"file_size_in_bytes":2490939,"is_demo_media":false,"hash":"0BIhIw==","visibility":"VISIBLE","media_usages":["TOP_SNAP"],"tile_media_id":"7ca7215d-76b0-43a3-9e6a-99573bf30f60"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:45 GMT
+recorded_with: VCR 6.3.1

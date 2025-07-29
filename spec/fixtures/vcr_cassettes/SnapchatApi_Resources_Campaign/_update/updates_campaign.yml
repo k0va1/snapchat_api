@@ -1,14 +1,65 @@
 ---
 http_interactions:
 - request:
-    method: put
+    method: post
+    uri: https://accounts.snapchat.com/login/oauth2/access_token
+    body:
+      encoding: US-ASCII
+      string: client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&refresh_token=<REFRESH_TOKEN>&grant_type=refresh_token
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - API Gateway
+      Date:
+      - Tue, 29 Jul 2025 11:53:33 GMT
+      Content-Type:
+      - application/json
+      X-Envoy-Upstream-Service-Time:
+      - '128'
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 google, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "access_token": "eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..bGwkLdDnjW5o5RfjWjRNKg.7J0S4j6NomKI4EkhKOPc2b9RoFy0-aRgGdK_YAmr63IMBPG_QsFkk_-SQuaPP8y0H6Ne7cM441UN5qvtrlxIRJbiKPLTGvHajjPaLP68bw5Og1wOISDgWA0NzOYb7ZgYDB7_RsHIADOitE80M-9Dpa-w9gHNvaIVKNdUC3AzooeLH_NwChIjzy3c6XTi8PUc69Dhj2GhcLg35RN55_esVNSduP5lyHusqWyG2d5bVEHzxt60SeDJzEqjjYHX2xrJtCHTktkIQMQfwpxYJJuZY7SP8mHZGf3UMo9NAuTnJWCm34ePjPOxI61m18qN70kzPls8IBowgvM4KPzPwT0wFRmE0TXY4VFqaZqqjbmWSTdeHDfnurH44ygFTDFM03TNv3f3as1a7D75aFQri5OGD2npCrzS3Q3c8Gd6D99UtJVdVo-_HIOzJxOQct1KfQEcW5RPkXgHR5jYIZAXaY1YgJxtBMxTi-cOdsF-guW3OXaElAGXfVMiLY8mUCvT64EmhffvcZTSn8VgJNkArv6wZQXC84A8KvVjU2fmjPEtUChf-eEtqrptU5tNp8ck_6rO_jrLBZJCJ0OXA0KQM1KQ49-LRdu45JOpoOIU-RtDJ2YgYrcKp83BfGghe6Cwg9FAw_yGN_4rhbM_PmXAaisSuvR4OLbcj8rvjccelkjEgWzXsME1FD06FVBaASy3GnuljKEelcsJsxIcEs3NzTcWTfLe0Hsb-QTsM1UolBd8uM4.ESlzn9SV02jOrSjbthDgHw",
+          "token_type": "Bearer",
+          "expires_in": 3600,
+          "refresh_token": "<REFRESH_TOKEN>",
+          "scope": "snapchat-marketing-api",
+          "id_token": ""
+        }
+  recorded_at: Tue, 29 Jul 2025 11:53:33 GMT
+- request:
+    method: post
     uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/campaigns
     body:
       encoding: UTF-8
-      string: '{"campaigns":[{"name":"Updated Campaign Name","status":"PAUSED","start_time":"2027-01-01T00:00:00.000Z","id":"38ef1dfa-28e8-4556-b75d-2158340e4852","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4"}]}'
+      string: '{"campaigns":[{"name":"Temporary Campaign","status":"ACTIVE","start_time":"2026-01-01T00:00:00.000Z","end_time":"2026-12-31T23:59:59.999Z","daily_budget_micro":20000000,"lifetime_spend_cap_micro":20000000}]}'
     headers:
       Authorization:
-      - Bearer <ACCESS_TOKEN>
+      - Bearer eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..bGwkLdDnjW5o5RfjWjRNKg.7J0S4j6NomKI4EkhKOPc2b9RoFy0-aRgGdK_YAmr63IMBPG_QsFkk_-SQuaPP8y0H6Ne7cM441UN5qvtrlxIRJbiKPLTGvHajjPaLP68bw5Og1wOISDgWA0NzOYb7ZgYDB7_RsHIADOitE80M-9Dpa-w9gHNvaIVKNdUC3AzooeLH_NwChIjzy3c6XTi8PUc69Dhj2GhcLg35RN55_esVNSduP5lyHusqWyG2d5bVEHzxt60SeDJzEqjjYHX2xrJtCHTktkIQMQfwpxYJJuZY7SP8mHZGf3UMo9NAuTnJWCm34ePjPOxI61m18qN70kzPls8IBowgvM4KPzPwT0wFRmE0TXY4VFqaZqqjbmWSTdeHDfnurH44ygFTDFM03TNv3f3as1a7D75aFQri5OGD2npCrzS3Q3c8Gd6D99UtJVdVo-_HIOzJxOQct1KfQEcW5RPkXgHR5jYIZAXaY1YgJxtBMxTi-cOdsF-guW3OXaElAGXfVMiLY8mUCvT64EmhffvcZTSn8VgJNkArv6wZQXC84A8KvVjU2fmjPEtUChf-eEtqrptU5tNp8ck_6rO_jrLBZJCJ0OXA0KQM1KQ49-LRdu45JOpoOIU-RtDJ2YgYrcKp83BfGghe6Cwg9FAw_yGN_4rhbM_PmXAaisSuvR4OLbcj8rvjccelkjEgWzXsME1FD06FVBaASy3GnuljKEelcsJsxIcEs3NzTcWTfLe0Hsb-QTsM1UolBd8uM4.ESlzn9SV02jOrSjbthDgHw
       Content-Type:
       - application/json
       User-Agent:
@@ -23,17 +74,23 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 05 Jul 2025 18:42:16 GMT
+      - Tue, 29 Jul 2025 11:53:34 GMT
       X-Request-Id:
-      - c8b40708-2ae2-4fe6-a8f4-050fb250b7c4
+      - 88087292-81a7-4597-a2c9-1fd0c967f340
       Content-Length:
-      - '245'
+      - '793'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '81'
+      X-Rate-Limit-Reset:
+      - '1753790015000'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '94'
+      - '646'
       X-Envoy-Upstream-Service-Time:
-      - '95'
+      - '647'
       Server:
       - API Gateway
       X-Envoy-Decorator-Operation:
@@ -46,8 +103,116 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"request_status":"ERROR","request_id":"c8b40708-2ae2-4fe6-a8f4-050fb250b7c4","campaigns":[{"sub_request_error_reason":"Error
-        code: E3004, message: Entity does not exist or you do not have permission
-        to access it","sub_request_status":"ERROR"}]}'
-  recorded_at: Sat, 05 Jul 2025 18:42:16 GMT
+      string: '{"request_status":"SUCCESS","request_id":"88087292-81a7-4597-a2c9-1fd0c967f340","campaigns":[{"sub_request_status":"SUCCESS","campaign":{"id":"d5129c2c-b870-4167-a263-15113dc3a952","updated_at":"2025-07-29T11:53:34.537Z","created_at":"2025-07-29T11:53:34.537Z","name":"Temporary
+        Campaign","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","daily_budget_micro":20000000,"status":"ACTIVE","objective":"BRAND_AWARENESS","start_time":"2026-01-01T00:00:00.000Z","end_time":"2026-12-31T23:59:59.999Z","lifetime_spend_cap_micro":20000000,"delivery_status":["INVALID_START_TIME","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_TEST_ACCOUNT"],"creation_state":"PUBLISHED","objective_v2_properties":{"objective_v2_type":"AWARENESS_AND_ENGAGEMENT","is_auto_generated":true},"pacing_properties_version":0}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:34 GMT
+- request:
+    method: put
+    uri: https://adsapi.snapchat.com/v1/adaccounts/dbb95f66-4e45-46f0-9760-14ea841db3b4/campaigns
+    body:
+      encoding: UTF-8
+      string: '{"campaigns":[{"name":"Updated Campaign Name","status":"PAUSED","start_time":"2027-01-01T00:00:00.000Z","id":"d5129c2c-b870-4167-a263-15113dc3a952","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4"}]}'
+    headers:
+      Authorization:
+      - Bearer eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..bGwkLdDnjW5o5RfjWjRNKg.7J0S4j6NomKI4EkhKOPc2b9RoFy0-aRgGdK_YAmr63IMBPG_QsFkk_-SQuaPP8y0H6Ne7cM441UN5qvtrlxIRJbiKPLTGvHajjPaLP68bw5Og1wOISDgWA0NzOYb7ZgYDB7_RsHIADOitE80M-9Dpa-w9gHNvaIVKNdUC3AzooeLH_NwChIjzy3c6XTi8PUc69Dhj2GhcLg35RN55_esVNSduP5lyHusqWyG2d5bVEHzxt60SeDJzEqjjYHX2xrJtCHTktkIQMQfwpxYJJuZY7SP8mHZGf3UMo9NAuTnJWCm34ePjPOxI61m18qN70kzPls8IBowgvM4KPzPwT0wFRmE0TXY4VFqaZqqjbmWSTdeHDfnurH44ygFTDFM03TNv3f3as1a7D75aFQri5OGD2npCrzS3Q3c8Gd6D99UtJVdVo-_HIOzJxOQct1KfQEcW5RPkXgHR5jYIZAXaY1YgJxtBMxTi-cOdsF-guW3OXaElAGXfVMiLY8mUCvT64EmhffvcZTSn8VgJNkArv6wZQXC84A8KvVjU2fmjPEtUChf-eEtqrptU5tNp8ck_6rO_jrLBZJCJ0OXA0KQM1KQ49-LRdu45JOpoOIU-RtDJ2YgYrcKp83BfGghe6Cwg9FAw_yGN_4rhbM_PmXAaisSuvR4OLbcj8rvjccelkjEgWzXsME1FD06FVBaASy3GnuljKEelcsJsxIcEs3NzTcWTfLe0Hsb-QTsM1UolBd8uM4.ESlzn9SV02jOrSjbthDgHw
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:34 GMT
+      X-Request-Id:
+      - 805519e4-ef9a-4751-a087-9451ce2f7ee4
+      Content-Length:
+      - '991'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '82'
+      X-Rate-Limit-Reset:
+      - '1753790020000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '792'
+      X-Envoy-Upstream-Service-Time:
+      - '793'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"805519e4-ef9a-4751-a087-9451ce2f7ee4","campaigns":[{"sub_request_status":"SUCCESS","campaign":{"id":"d5129c2c-b870-4167-a263-15113dc3a952","updated_at":"2025-07-29T11:53:35.338Z","created_at":"2025-07-29T11:53:34.537Z","created_by_app_id":"1debb989-3a6f-4cc7-aa9b-099c4c047eef","created_by_user":"e905030e-0f40-4dba-a553-c903d4a352c7","last_updated_by_app_id":"1debb989-3a6f-4cc7-aa9b-099c4c047eef","last_updated_by_user":"e905030e-0f40-4dba-a553-c903d4a352c7","name":"Updated
+        Campaign Name","ad_account_id":"dbb95f66-4e45-46f0-9760-14ea841db3b4","status":"PAUSED","objective":"BRAND_AWARENESS","start_time":"2027-01-01T00:00:00.000Z","delivery_status":["INVALID_START_TIME","INVALID_TEST_ACCOUNT","INVALID_NOT_EFFECTIVE_ACTIVE","INVALID_NOT_ACTIVE","INVALID_START_TIME_AFTER_END_TIME"],"creation_state":"PUBLISHED","objective_v2_properties":{"objective_v2_type":"AWARENESS_AND_ENGAGEMENT","is_auto_generated":true},"pacing_properties_version":0}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:35 GMT
+- request:
+    method: delete
+    uri: https://adsapi.snapchat.com/v1/campaigns/d5129c2c-b870-4167-a263-15113dc3a952
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..bGwkLdDnjW5o5RfjWjRNKg.7J0S4j6NomKI4EkhKOPc2b9RoFy0-aRgGdK_YAmr63IMBPG_QsFkk_-SQuaPP8y0H6Ne7cM441UN5qvtrlxIRJbiKPLTGvHajjPaLP68bw5Og1wOISDgWA0NzOYb7ZgYDB7_RsHIADOitE80M-9Dpa-w9gHNvaIVKNdUC3AzooeLH_NwChIjzy3c6XTi8PUc69Dhj2GhcLg35RN55_esVNSduP5lyHusqWyG2d5bVEHzxt60SeDJzEqjjYHX2xrJtCHTktkIQMQfwpxYJJuZY7SP8mHZGf3UMo9NAuTnJWCm34ePjPOxI61m18qN70kzPls8IBowgvM4KPzPwT0wFRmE0TXY4VFqaZqqjbmWSTdeHDfnurH44ygFTDFM03TNv3f3as1a7D75aFQri5OGD2npCrzS3Q3c8Gd6D99UtJVdVo-_HIOzJxOQct1KfQEcW5RPkXgHR5jYIZAXaY1YgJxtBMxTi-cOdsF-guW3OXaElAGXfVMiLY8mUCvT64EmhffvcZTSn8VgJNkArv6wZQXC84A8KvVjU2fmjPEtUChf-eEtqrptU5tNp8ck_6rO_jrLBZJCJ0OXA0KQM1KQ49-LRdu45JOpoOIU-RtDJ2YgYrcKp83BfGghe6Cwg9FAw_yGN_4rhbM_PmXAaisSuvR4OLbcj8rvjccelkjEgWzXsME1FD06FVBaASy3GnuljKEelcsJsxIcEs3NzTcWTfLe0Hsb-QTsM1UolBd8uM4.ESlzn9SV02jOrSjbthDgHw
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 29 Jul 2025 11:53:35 GMT
+      X-Request-Id:
+      - c73a2fc0-dc4a-4d89-9fa4-2e77d0bfec1d
+      Content-Length:
+      - '95'
+      X-Rate-Limit-Limit:
+      - '83'
+      X-Rate-Limit-Remaining:
+      - '82'
+      X-Rate-Limit-Reset:
+      - '1753790020000'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '445'
+      X-Envoy-Upstream-Service-Time:
+      - '445'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"c73a2fc0-dc4a-4d89-9fa4-2e77d0bfec1d","campaigns":[]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:36 GMT
 recorded_with: VCR 6.3.1

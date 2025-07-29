@@ -1,6 +1,57 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: https://accounts.snapchat.com/login/oauth2/access_token
+    body:
+      encoding: US-ASCII
+      string: client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&refresh_token=<REFRESH_TOKEN>&grant_type=refresh_token
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - API Gateway
+      Date:
+      - Tue, 29 Jul 2025 11:53:38 GMT
+      Content-Type:
+      - application/json
+      X-Envoy-Upstream-Service-Time:
+      - '119'
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 google, 1.1 google
+      Alt-Svc:
+      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "access_token": "eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..rINzSH_fw6EQhRvySgxVew.K_3EdGlYUdP3hj1f9ZPvf403m2mgf_WNuDw_gr-5XRcgT2gJTlGi2k8soEcXtWUInFYiXVVxX4RrgDwfulSuXlxyKJVhqoU-Bf0SPiYIbWkUfpWT-uvm_6pB-EoMlCEkkR3vjRyTHL1YD4rgXTed1E7tF-JxoKSEByTJ0wR6rcA24BaSq3u_z2WaoK5hzP9GKj6EypZlCURlkJv6LZo1jSpb7oQLkhKYQZO0CwC-lMkXMPyRASvGuapRasYis_NaIxwjypYz2H_WzzlC0WAiFZlLA_H1SsAgx4cMINNi1XUpx5BBRJp7HV_NQzTjPvSdEoCkDAhOfbN6YtmSLaCI9qPc0LgzYlmdGaXHo-SaxQznpBV6lkkJjgBlUV-rRJSuGYFivL14Y3nBcsX0jJFoevY_o5u12l2QujvQ_PEmvxWur4qVyxzgedJRlTh2zTaQ4MJA_ejkfBK7kzIapNhh1pNtEVOzHfOtjef23bWLTo6o3YNXK92pMyHYKsDp8KSH2Jpq4hGvwDJu3gOj9Hoc5zwerwi-n1WwIX7DHXzw9iWzXwfQFr8H5-7K7ZPNdAHW9rpM8tMi8UqRcM4bGFk4m4qcKi2iLjSSn06Xqg0nahepHbAM3IuojUAzW4UYysyvKUHWr7zZN8kK3VKgJ7yeg_fytdLoCeJibEotoxm_V1Pz0g-rq-wIVovga94vQ1gw4qPgLrGXOT8v3BTtNt2Xq1m-xvoOCCp5CaiMBBlbCD4._lAgOv0bj1JV2BuMHUYK0A",
+          "token_type": "Bearer",
+          "expires_in": 3600,
+          "refresh_token": "<REFRESH_TOKEN>",
+          "scope": "snapchat-marketing-api",
+          "id_token": ""
+        }
+  recorded_at: Tue, 29 Jul 2025 11:53:38 GMT
+- request:
     method: get
     uri: https://adsapi.snapchat.com/v1/campaigns/ce00d8e1-ebb1-4885-8348-cf5c20375179/stats?end_time=2025-07-31T00:00:00%2B02:00&granularity=DAY&start_time=2025-07-01T00:00:00%2B02:00
     body:
@@ -8,7 +59,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - Bearer <ACCESS_TOKEN>
+      - Bearer eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..rINzSH_fw6EQhRvySgxVew.K_3EdGlYUdP3hj1f9ZPvf403m2mgf_WNuDw_gr-5XRcgT2gJTlGi2k8soEcXtWUInFYiXVVxX4RrgDwfulSuXlxyKJVhqoU-Bf0SPiYIbWkUfpWT-uvm_6pB-EoMlCEkkR3vjRyTHL1YD4rgXTed1E7tF-JxoKSEByTJ0wR6rcA24BaSq3u_z2WaoK5hzP9GKj6EypZlCURlkJv6LZo1jSpb7oQLkhKYQZO0CwC-lMkXMPyRASvGuapRasYis_NaIxwjypYz2H_WzzlC0WAiFZlLA_H1SsAgx4cMINNi1XUpx5BBRJp7HV_NQzTjPvSdEoCkDAhOfbN6YtmSLaCI9qPc0LgzYlmdGaXHo-SaxQznpBV6lkkJjgBlUV-rRJSuGYFivL14Y3nBcsX0jJFoevY_o5u12l2QujvQ_PEmvxWur4qVyxzgedJRlTh2zTaQ4MJA_ejkfBK7kzIapNhh1pNtEVOzHfOtjef23bWLTo6o3YNXK92pMyHYKsDp8KSH2Jpq4hGvwDJu3gOj9Hoc5zwerwi-n1WwIX7DHXzw9iWzXwfQFr8H5-7K7ZPNdAHW9rpM8tMi8UqRcM4bGFk4m4qcKi2iLjSSn06Xqg0nahepHbAM3IuojUAzW4UYysyvKUHWr7zZN8kK3VKgJ7yeg_fytdLoCeJibEotoxm_V1Pz0g-rq-wIVovga94vQ1gw4qPgLrGXOT8v3BTtNt2Xq1m-xvoOCCp5CaiMBBlbCD4._lAgOv0bj1JV2BuMHUYK0A
       Content-Type:
       - application/json
       User-Agent:
@@ -23,21 +74,21 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 05 Jul 2025 18:42:17 GMT
+      - Tue, 29 Jul 2025 11:53:38 GMT
       X-Request-Id:
-      - c7035989-c5c6-49fc-9c6c-34c524932deb
+      - a82a5709-4bb9-4d38-8103-795a534218ef
       X-Rate-Limit-Limit:
       - '1666'
       X-Rate-Limit-Remaining:
       - '1665'
       X-Rate-Limit-Reset:
-      - '1751740940000'
+      - '1753790020000'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '79'
+      - '89'
       X-Envoy-Upstream-Service-Time:
-      - '81'
+      - '91'
       Vary:
       - Accept-Encoding
       Server:
@@ -54,6 +105,6 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"request_status":"SUCCESS","request_id":"c7035989-c5c6-49fc-9c6c-34c524932deb","timeseries_stats":[{"sub_request_status":"SUCCESS","timeseries_stat":{"id":"ce00d8e1-ebb1-4885-8348-cf5c20375179","type":"CAMPAIGN","granularity":"DAY","start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","finalized_data_end_time":"2025-07-05T14:00:00.000Z","timeseries":[{"start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-02T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-02T00:00:00.000+02:00","end_time":"2025-07-03T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-03T00:00:00.000+02:00","end_time":"2025-07-04T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-04T00:00:00.000+02:00","end_time":"2025-07-05T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-05T00:00:00.000+02:00","end_time":"2025-07-06T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-06T00:00:00.000+02:00","end_time":"2025-07-07T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-07T00:00:00.000+02:00","end_time":"2025-07-08T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-08T00:00:00.000+02:00","end_time":"2025-07-09T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-09T00:00:00.000+02:00","end_time":"2025-07-10T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-10T00:00:00.000+02:00","end_time":"2025-07-11T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-11T00:00:00.000+02:00","end_time":"2025-07-12T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-12T00:00:00.000+02:00","end_time":"2025-07-13T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-13T00:00:00.000+02:00","end_time":"2025-07-14T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-14T00:00:00.000+02:00","end_time":"2025-07-15T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-15T00:00:00.000+02:00","end_time":"2025-07-16T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-16T00:00:00.000+02:00","end_time":"2025-07-17T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-17T00:00:00.000+02:00","end_time":"2025-07-18T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-18T00:00:00.000+02:00","end_time":"2025-07-19T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-19T00:00:00.000+02:00","end_time":"2025-07-20T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-20T00:00:00.000+02:00","end_time":"2025-07-21T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-21T00:00:00.000+02:00","end_time":"2025-07-22T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-22T00:00:00.000+02:00","end_time":"2025-07-23T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-23T00:00:00.000+02:00","end_time":"2025-07-24T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-24T00:00:00.000+02:00","end_time":"2025-07-25T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-25T00:00:00.000+02:00","end_time":"2025-07-26T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-26T00:00:00.000+02:00","end_time":"2025-07-27T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-27T00:00:00.000+02:00","end_time":"2025-07-28T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-28T00:00:00.000+02:00","end_time":"2025-07-29T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-29T00:00:00.000+02:00","end_time":"2025-07-30T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-30T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}}],"attributing_party":"SNAPCHAT"}}]}'
-  recorded_at: Sat, 05 Jul 2025 18:42:17 GMT
+      string: '{"request_status":"SUCCESS","request_id":"a82a5709-4bb9-4d38-8103-795a534218ef","timeseries_stats":[{"sub_request_status":"SUCCESS","timeseries_stat":{"id":"ce00d8e1-ebb1-4885-8348-cf5c20375179","type":"CAMPAIGN","granularity":"DAY","start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","finalized_data_end_time":"2025-07-29T09:00:00.000Z","timeseries":[{"start_time":"2025-07-01T00:00:00.000+02:00","end_time":"2025-07-02T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-02T00:00:00.000+02:00","end_time":"2025-07-03T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-03T00:00:00.000+02:00","end_time":"2025-07-04T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-04T00:00:00.000+02:00","end_time":"2025-07-05T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-05T00:00:00.000+02:00","end_time":"2025-07-06T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-06T00:00:00.000+02:00","end_time":"2025-07-07T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-07T00:00:00.000+02:00","end_time":"2025-07-08T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-08T00:00:00.000+02:00","end_time":"2025-07-09T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-09T00:00:00.000+02:00","end_time":"2025-07-10T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-10T00:00:00.000+02:00","end_time":"2025-07-11T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-11T00:00:00.000+02:00","end_time":"2025-07-12T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-12T00:00:00.000+02:00","end_time":"2025-07-13T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-13T00:00:00.000+02:00","end_time":"2025-07-14T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-14T00:00:00.000+02:00","end_time":"2025-07-15T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-15T00:00:00.000+02:00","end_time":"2025-07-16T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-16T00:00:00.000+02:00","end_time":"2025-07-17T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-17T00:00:00.000+02:00","end_time":"2025-07-18T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-18T00:00:00.000+02:00","end_time":"2025-07-19T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-19T00:00:00.000+02:00","end_time":"2025-07-20T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-20T00:00:00.000+02:00","end_time":"2025-07-21T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-21T00:00:00.000+02:00","end_time":"2025-07-22T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-22T00:00:00.000+02:00","end_time":"2025-07-23T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-23T00:00:00.000+02:00","end_time":"2025-07-24T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-24T00:00:00.000+02:00","end_time":"2025-07-25T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-25T00:00:00.000+02:00","end_time":"2025-07-26T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-26T00:00:00.000+02:00","end_time":"2025-07-27T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-27T00:00:00.000+02:00","end_time":"2025-07-28T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-28T00:00:00.000+02:00","end_time":"2025-07-29T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-29T00:00:00.000+02:00","end_time":"2025-07-30T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}},{"start_time":"2025-07-30T00:00:00.000+02:00","end_time":"2025-07-31T00:00:00.000+02:00","stats":{"impressions":0,"spend":0}}],"attributing_party":"SNAPCHAT"}}]}'
+  recorded_at: Tue, 29 Jul 2025 11:53:38 GMT
 recorded_with: VCR 6.3.1

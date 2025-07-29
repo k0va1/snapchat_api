@@ -9,9 +9,8 @@ RSpec.describe SnapchatApi::Resources::Campaign do
     )
   end
 
-  let(:campaign_resource) { client.campaigns }
+  let(:campaign_resource) {client.refresh_tokens!; client.campaigns }
   let(:ad_account_id) { "dbb95f66-4e45-46f0-9760-14ea841db3b4" }
-  let(:campaign_id) { "ce00d8e1-ebb1-4885-8348-cf5c20375179" }
 
   describe "#list_all", :vcr do
     it "handles pagination by making multiple requests" do
@@ -22,6 +21,8 @@ RSpec.describe SnapchatApi::Resources::Campaign do
   end
 
   describe "#get", :vcr do
+    let(:campaign_id) { "ce00d8e1-ebb1-4885-8348-cf5c20375179" }
+
     it "returns campaign data when successful" do
       campaign = campaign_resource.get(ad_account_id: ad_account_id, campaign_id: campaign_id)
       expect(campaign).to include("id", "name", "status")
@@ -40,14 +41,36 @@ RSpec.describe SnapchatApi::Resources::Campaign do
       }
     end
 
+    @existing_campaign_id = nil
+
     it "creates the campaign" do
       campaign = campaign_resource.create(ad_account_id: ad_account_id, params: campaign_params)
+      @existing_campaign_id = campaign["id"]
       expect(campaign).to include("id", "name", "status")
+      expect(campaign["name"]).to eq("Test Campaign")
+      expect(campaign["status"]).to eq("ACTIVE")
+    end
+
+    after do
+      if @existing_ad_squad_id
+        campaign_resource.delete(campaign_id: @existing_campaign_id)
+      end
     end
   end
 
   describe "#update", :vcr do
-    let(:campaign_id) { "38ef1dfa-28e8-4556-b75d-2158340e4852" }
+    before do
+      @existing_campaign = campaign_resource.create(ad_account_id: ad_account_id, params: {
+        name: "Temporary Campaign",
+        status: "ACTIVE",
+        start_time: "2026-01-01T00:00:00.000Z",
+        end_time: "2026-12-31T23:59:59.999Z",
+        daily_budget_micro: 20000000,
+        lifetime_spend_cap_micro: 20000000
+      })
+      @existing_campaign_id = @existing_campaign["id"]
+    end
+    let(:campaign_id) { @existing_campaign_id  }
 
     let(:update_params) do
       {
@@ -64,11 +87,30 @@ RSpec.describe SnapchatApi::Resources::Campaign do
         params: update_params
       )
       expect(campaign).to include("id", "name", "status")
+      expect(campaign["name"]).to eq("Updated Campaign Name")
+    end
+
+    after do
+      if @existing_campaign_id
+        campaign_resource.delete(campaign_id: @existing_campaign_id)
+      end
     end
   end
 
   describe "#delete", :vcr do
-    let(:campaign_id) { "38ef1dfa-28e8-4556-b75d-2158340e4852" }
+    before do
+      @existing_campaign = campaign_resource.create(ad_account_id: ad_account_id, params: {
+        name: "Temporary Campaign",
+        status: "ACTIVE",
+        start_time: "2026-01-01T00:00:00.000Z",
+        end_time: "2026-12-31T23:59:59.999Z",
+        daily_budget_micro: 20000000,
+        lifetime_spend_cap_micro: 20000000
+      })
+      @existing_campaign_id = @existing_campaign["id"]
+    end
+
+    let(:campaign_id) { @existing_campaign_id }
 
     it "deletes campaign" do
       result = campaign_resource.delete(campaign_id: campaign_id)
@@ -77,6 +119,8 @@ RSpec.describe SnapchatApi::Resources::Campaign do
   end
 
   describe "#get_stats", :vcr do
+    let(:campaign_id) { "ce00d8e1-ebb1-4885-8348-cf5c20375179" }
+
     it "returns granular stats" do
       response = campaign_resource.get_stats(
         campaign_id: campaign_id,

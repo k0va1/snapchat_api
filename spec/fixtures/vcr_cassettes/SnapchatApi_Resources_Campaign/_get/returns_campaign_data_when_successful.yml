@@ -1,6 +1,57 @@
 ---
 http_interactions:
 - request:
+    method: post
+    uri: https://accounts.snapchat.com/login/oauth2/access_token
+    body:
+      encoding: US-ASCII
+      string: client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&refresh_token=<REFRESH_TOKEN>&grant_type=refresh_token
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - API Gateway
+      Date:
+      - Tue, 29 Jul 2025 11:53:31 GMT
+      Content-Type:
+      - application/json
+      X-Envoy-Upstream-Service-Time:
+      - '169'
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 google, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "access_token": "eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..4SoTSSLGgI4wVP97QO8TSw.I23chdq4q0sUz2tKCYiQ-Z41Fih4_4uXyMwvALjmV_7I-T1AnthOj7FHmU-UPil3Vku2Sm843KojXICUBzldT_BeChIH5XRSGayBYw4FurABvBiOYRl7Pu6slGhmzeEqWFC22KrsSFGtnxsdg2NRuz-ZpzVhmuCHna8CdUOiAVGuO5vqPTY9SFkdB_iiKiVNz1kDk7jrDyQSHT6k9JJHpW_PZjqKFqZO9JvFWv0XKAvt9wU3CisuLeOtHJuDTSzSe4d0MFydMXXY6odL3Bxf7IL-0YoynLI0z3Ls8Ipia5GSwvEeEGRyUB5vqS6fnQ_lde7Jj-ti6ALWr1iW3p3zlPFEYg1-CbPB8acpUufuC2YPr8oCpSRjpFfjsDeS7gjU9ArDp9VkQIC9xYFxl2MigaN4OAXLFFT9ZZd7LlrwR18sJ-u4nZxEU_TAmpjL2fFydZp6HBEjKseX_ZFv-EX5zP3n3_Z5n_EeYZGZc7lW6cqJvKbaaxyJYFuBo5uKtG0RA4OlEGbefQv1vrJRVv29ryMvZO5H0J0i5i7hkCuoAgnTcISQmH1LfhTPUxy7d3o4Mg2rpMUns1JShx0YtSpSo8yRKoyaEobODnl7vKgj7iEtlfvOr4NvmIekVmVbj_h7JAFAZynnXP6heRWayimEPO_XQ0rAI-_vNrGma4M14Xay5ltmtLksJnky7lfoaKDeVjAo9ARLC-UUzT4qelL_lSpUVsNDwQ0w793MPop4vVQ.2qFdoT4Gw8r4f0Riv6fmfA",
+          "token_type": "Bearer",
+          "expires_in": 3600,
+          "refresh_token": "<REFRESH_TOKEN>",
+          "scope": "snapchat-marketing-api",
+          "id_token": ""
+        }
+  recorded_at: Tue, 29 Jul 2025 11:53:31 GMT
+- request:
     method: get
     uri: https://adsapi.snapchat.com/v1/campaigns/ce00d8e1-ebb1-4885-8348-cf5c20375179
     body:
@@ -8,7 +59,7 @@ http_interactions:
       string: ''
     headers:
       Authorization:
-      - Bearer <ACCESS_TOKEN>
+      - Bearer eyJpc3MiOiJodHRwczpcL1wvYWNjb3VudHMuc25hcGNoYXQuY29tXC9hY2NvdW50c1wvb2F1dGgyXC90b2tlbiIsInR5cCI6IkpXVCIsImVuYyI6IkExMjhDQkMtSFMyNTYiLCJhbGciOiJkaXIiLCJraWQiOiJhY2Nlc3MtdG9rZW4tYTEyOGNiYy1oczI1Ni4wIn0..4SoTSSLGgI4wVP97QO8TSw.I23chdq4q0sUz2tKCYiQ-Z41Fih4_4uXyMwvALjmV_7I-T1AnthOj7FHmU-UPil3Vku2Sm843KojXICUBzldT_BeChIH5XRSGayBYw4FurABvBiOYRl7Pu6slGhmzeEqWFC22KrsSFGtnxsdg2NRuz-ZpzVhmuCHna8CdUOiAVGuO5vqPTY9SFkdB_iiKiVNz1kDk7jrDyQSHT6k9JJHpW_PZjqKFqZO9JvFWv0XKAvt9wU3CisuLeOtHJuDTSzSe4d0MFydMXXY6odL3Bxf7IL-0YoynLI0z3Ls8Ipia5GSwvEeEGRyUB5vqS6fnQ_lde7Jj-ti6ALWr1iW3p3zlPFEYg1-CbPB8acpUufuC2YPr8oCpSRjpFfjsDeS7gjU9ArDp9VkQIC9xYFxl2MigaN4OAXLFFT9ZZd7LlrwR18sJ-u4nZxEU_TAmpjL2fFydZp6HBEjKseX_ZFv-EX5zP3n3_Z5n_EeYZGZc7lW6cqJvKbaaxyJYFuBo5uKtG0RA4OlEGbefQv1vrJRVv29ryMvZO5H0J0i5i7hkCuoAgnTcISQmH1LfhTPUxy7d3o4Mg2rpMUns1JShx0YtSpSo8yRKoyaEobODnl7vKgj7iEtlfvOr4NvmIekVmVbj_h7JAFAZynnXP6heRWayimEPO_XQ0rAI-_vNrGma4M14Xay5ltmtLksJnky7lfoaKDeVjAo9ARLC-UUzT4qelL_lSpUVsNDwQ0w793MPop4vVQ.2qFdoT4Gw8r4f0Riv6fmfA
       Content-Type:
       - application/json
       User-Agent:
@@ -23,17 +74,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 05 Jul 2025 18:42:15 GMT
+      - Tue, 29 Jul 2025 11:53:31 GMT
       X-Request-Id:
-      - 72a478da-236f-48ca-b28c-f719046910c8
+      - 33cc452a-72b5-4b72-bb3e-deaa0604e9b9
       Content-Length:
-      - '641'
+      - '783'
       Content-Type:
       - application/json
       X-Tr-St-1:
-      - '75'
+      - '69'
       X-Envoy-Upstream-Service-Time:
-      - '75'
+      - '70'
       Server:
       - API Gateway
       X-Envoy-Decorator-Operation:
@@ -47,6 +98,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJyZXF1ZXN0X3N0YXR1cyI6IlNVQ0NFU1MiLCJyZXF1ZXN0X2lkIjoiNzJhNDc4ZGEtMjM2Zi00OGNhLWIyOGMtZjcxOTA0NjkxMGM4IiwiY2FtcGFpZ25zIjpbeyJzdWJfcmVxdWVzdF9zdGF0dXMiOiJTVUNDRVNTIiwiY2FtcGFpZ24iOnsiaWQiOiJjZTAwZDhlMS1lYmIxLTQ4ODUtODM0OC1jZjVjMjAzNzUxNzkiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNC0wNlQxMjo1MDoxMy45OTdaIiwiY3JlYXRlZF9hdCI6IjIwMjUtMDQtMDZUMTI6NTA6MTMuOTk3WiIsIm5hbWUiOiJDYW1wYWlnbiAtIFRlxZ90IOS9oOWlvSAtIDIwMjUtMDQtMDZUMTQ6NTA6MTIuODQ5NzUwIC0gYXF1YWxpIiwiYWRfYWNjb3VudF9pZCI6ImRiYjk1ZjY2LTRlNDUtNDZmMC05NzYwLTE0ZWE4NDFkYjNiNCIsImRhaWx5X2J1ZGdldF9taWNybyI6MzQ1NjAwMDAsInN0YXR1cyI6IkFDVElWRSIsIm9iamVjdGl2ZSI6IkJSQU5EX0FXQVJFTkVTUyIsInN0YXJ0X3RpbWUiOiIyMDI1LTA0LTA2VDEyOjUwOjEyLjg0OVoiLCJkZWxpdmVyeV9zdGF0dXMiOlsiSU5WQUxJRF9OT1RfRUZGRUNUSVZFX0FDVElWRSIsIklOVkFMSURfVEVTVF9BQ0NPVU5UIl0sImNyZWF0aW9uX3N0YXRlIjoiUFVCTElTSEVEIiwicGFjaW5nX3Byb3BlcnRpZXNfdmVyc2lvbiI6MH19XX0=
-  recorded_at: Sat, 05 Jul 2025 18:42:15 GMT
+        eyJyZXF1ZXN0X3N0YXR1cyI6IlNVQ0NFU1MiLCJyZXF1ZXN0X2lkIjoiMzNjYzQ1MmEtNzJiNS00YjcyLWJiM2UtZGVhYTA2MDRlOWI5IiwiY2FtcGFpZ25zIjpbeyJzdWJfcmVxdWVzdF9zdGF0dXMiOiJTVUNDRVNTIiwiY2FtcGFpZ24iOnsiaWQiOiJjZTAwZDhlMS1lYmIxLTQ4ODUtODM0OC1jZjVjMjAzNzUxNzkiLCJ1cGRhdGVkX2F0IjoiMjAyNS0wNC0wNlQxMjo1MDoxMy45OTdaIiwiY3JlYXRlZF9hdCI6IjIwMjUtMDQtMDZUMTI6NTA6MTMuOTk3WiIsIm5hbWUiOiJDYW1wYWlnbiAtIFRlxZ90IOS9oOWlvSAtIDIwMjUtMDQtMDZUMTQ6NTA6MTIuODQ5NzUwIC0gYXF1YWxpIiwiYWRfYWNjb3VudF9pZCI6ImRiYjk1ZjY2LTRlNDUtNDZmMC05NzYwLTE0ZWE4NDFkYjNiNCIsImRhaWx5X2J1ZGdldF9taWNybyI6MzQ1NjAwMDAsInN0YXR1cyI6IkFDVElWRSIsIm9iamVjdGl2ZSI6IkJSQU5EX0FXQVJFTkVTUyIsInN0YXJ0X3RpbWUiOiIyMDI1LTA0LTA2VDEyOjUwOjEyLjg0OVoiLCJkZWxpdmVyeV9zdGF0dXMiOlsiSU5WQUxJRF9DQU1QQUlHTl9IQVNfTk9fQUNUSVZFX0FEX1NRVUFEIiwiSU5WQUxJRF9OT1RfRUZGRUNUSVZFX0FDVElWRSIsIklOVkFMSURfVEVTVF9BQ0NPVU5UIl0sImNyZWF0aW9uX3N0YXRlIjoiUFVCTElTSEVEIiwib2JqZWN0aXZlX3YyX3Byb3BlcnRpZXMiOnsib2JqZWN0aXZlX3YyX3R5cGUiOiJBV0FSRU5FU1NfQU5EX0VOR0FHRU1FTlQiLCJpc19hdXRvX2dlbmVyYXRlZCI6dHJ1ZX0sInBhY2luZ19wcm9wZXJ0aWVzX3ZlcnNpb24iOjB9fV19
+  recorded_at: Tue, 29 Jul 2025 11:53:31 GMT
 recorded_with: VCR 6.3.1

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:developers.snap.com)",
+      "Bash(source:*)",
+      "Bash(bundle exec ruby:*)"
+    ],
+    "deny": []
+  }
+}
