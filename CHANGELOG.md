@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/k0va1/snapchat_api/compare/v0.1.1...v0.1.2) (2025-07-29)
+
+
+### Bug Fixes
+
+* changelog styling ([361d93c](https://github.com/k0va1/snapchat_api/commit/361d93c8886ed017f8910aa7773264a9cd91383a))
+
 ## [0.1.1](https://github.com/k0va1/snapchat_api/compare/v0.1.0...v0.1.1) (2025-07-29)
 
 
