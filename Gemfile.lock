@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    snapchat_api (0.1.1)
+    snapchat_api (0.1.2)
       faraday (~> 2.0)
       faraday-follow_redirects (~> 0.3)
       faraday-multipart (~> 1.0)
