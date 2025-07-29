@@ -9,7 +9,10 @@ RSpec.describe SnapchatApi::Resources::Campaign do
     )
   end
 
-  let(:campaign_resource) {client.refresh_tokens!; client.campaigns }
+  let(:campaign_resource) {
+    client.refresh_tokens!
+    client.campaigns
+  }
   let(:ad_account_id) { "dbb95f66-4e45-46f0-9760-14ea841db3b4" }
 
   describe "#list_all", :vcr do
@@ -70,7 +73,7 @@ RSpec.describe SnapchatApi::Resources::Campaign do
       })
       @existing_campaign_id = @existing_campaign["id"]
     end
-    let(:campaign_id) { @existing_campaign_id  }
+    let(:campaign_id) { @existing_campaign_id }
 
     let(:update_params) do
       {
