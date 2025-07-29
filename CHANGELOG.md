@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/k0va1/snapchat_api/compare/v0.1.2...v0.1.3) (2025-07-29)
+
+
+### Bug Fixes
+
+* add MIT licence ([5f054ea](https://github.com/k0va1/snapchat_api/commit/5f054eadb61351fa960f4b2d7568b59c2ef5706a))
+
 ## [0.1.2](https://github.com/k0va1/snapchat_api/compare/v0.1.1...v0.1.2) (2025-07-29)
 
 
