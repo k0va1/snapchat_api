@@ -14,7 +14,7 @@ RSpec.describe SnapchatApi::Resources::Ad do
 
   describe "#list_all_by", :vcr do
     it "handles pagination by making multiple requests" do
-      ads = ad_resource.list_all_by(entity_id: ad_account_id, entity: :ad_account, params: { limit: 10 })
+      ads = ad_resource.list_all_by(entity_id: ad_account_id, entity: :ad_account, params: {limit: 10})
       expect(ads).to be_an(Array)
       expect(ads.first).to include("id", "name", "status")
     end
@@ -31,47 +31,44 @@ RSpec.describe SnapchatApi::Resources::Ad do
 
   describe "#create", :vcr do
     before do
-      @ad_squad_id = begin
-                       client.ad_squads.create(
-                         campaign_id: "ce00d8e1-ebb1-4885-8348-cf5c20375179",
-                         params: {
-                           name: "Ad Squad Uno",
-                           type: "SNAP_ADS",
-                           placement_v2: {
-                             config: "AUTOMATIC"
-                           },
-                           optimization_goal: "IMPRESSIONS",
-                           bid_micro: 100000,
-                           daily_budget_micro: 1000000,
-                           bid_strategy: "LOWEST_COST_WITH_MAX_BID",
-                           billing_event: "IMPRESSION",
-                           targeting: {
-                             geos: [
-                               {
-                                 country_code: "us"
-                               }
-                             ]
-                           },
-                           start_time: "2025-08-11T22:03:58.869Z"
-                         }
-                       )["id"]
-                     end
+      @ad_squad_id = client.ad_squads.create(
+        campaign_id: "ce00d8e1-ebb1-4885-8348-cf5c20375179",
+        params: {
+          name: "Ad Squad Uno",
+          type: "SNAP_ADS",
+          placement_v2: {
+            config: "AUTOMATIC"
+          },
+          optimization_goal: "IMPRESSIONS",
+          bid_micro: 100000,
+          daily_budget_micro: 1000000,
+          bid_strategy: "LOWEST_COST_WITH_MAX_BID",
+          billing_event: "IMPRESSION",
+          targeting: {
+            geos: [
+              {
+                country_code: "us"
+              }
+            ]
+          },
+          start_time: "2025-08-11T22:03:58.869Z"
+        }
+      )["id"]
+
       @media_id = "e2412304-2bb4-4145-aea2-8498414892f8"
-      @creative_id = begin
-                       client.creatives.create(
-                         ad_account_id: ad_account_id,
-                         params: {
-                           name: "Test Creative",
-                           type: "SNAP_AD",
-                           top_snap_media_id: @media_id,
-                           headline: "Test Headline",
-                           ad_account_id: ad_account_id,
-                           profile_properties: {
-                             profile_id: "c9ba7b74-06a2-4ea2-8c05-355287355971"
-                           }
-                         }
-                       )["id"]
-                     end
+      @creative_id = client.creatives.create(
+        ad_account_id: ad_account_id,
+        params: {
+          name: "Test Creative",
+          type: "SNAP_AD",
+          top_snap_media_id: @media_id,
+          headline: "Test Headline",
+          ad_account_id: ad_account_id,
+          profile_properties: {
+            profile_id: "c9ba7b74-06a2-4ea2-8c05-355287355971"
+          }
+        }
+      )["id"]
     end
     let(:campaign_id) { "ce00d8e1-ebb1-4885-8348-cf5c20375179" }
     let(:ad_squad_id) { @ad_squad_id }
@@ -109,47 +106,45 @@ RSpec.describe SnapchatApi::Resources::Ad do
 
   describe "#update", :vcr do
     before do
-      @ad_squad_id = begin
-                       client.ad_squads.create(
-                         campaign_id: "ce00d8e1-ebb1-4885-8348-cf5c20375179",
-                         params: {
-                           name: "Ad Squad Uno",
-                           type: "SNAP_ADS",
-                           placement_v2: {
-                             config: "AUTOMATIC"
-                           },
-                           optimization_goal: "IMPRESSIONS",
-                           bid_micro: 100000,
-                           daily_budget_micro: 1000000,
-                           bid_strategy: "LOWEST_COST_WITH_MAX_BID",
-                           billing_event: "IMPRESSION",
-                           targeting: {
-                             geos: [
-                               {
-                                 country_code: "us"
-                               }
-                             ]
-                           },
-                           start_time: "2025-08-11T22:03:58.869Z"
-                         }
-                       )["id"]
-                     end
+      @ad_squad_id = client.ad_squads.create(
+        campaign_id: "ce00d8e1-ebb1-4885-8348-cf5c20375179",
+        params: {
+          name: "Ad Squad Uno",
+          type: "SNAP_ADS",
+          placement_v2: {
+            config: "AUTOMATIC"
+          },
+          optimization_goal: "IMPRESSIONS",
+          bid_micro: 100000,
+          daily_budget_micro: 1000000,
+          bid_strategy: "LOWEST_COST_WITH_MAX_BID",
+          billing_event: "IMPRESSION",
+          targeting: {
+            geos: [
+              {
+                country_code: "us"
+              }
+            ]
+          },
+          start_time: "2025-08-11T22:03:58.869Z"
+        }
+      )["id"]
+
       @media_id = "e2412304-2bb4-4145-aea2-8498414892f8"
-      @creative_id = begin
-                       client.creatives.create(
-                         ad_account_id: ad_account_id,
-                         params: {
-                           name: "Test Creative",
-                           type: "SNAP_AD",
-                           top_snap_media_id: @media_id,
-                           headline: "Test Headline",
-                           ad_account_id: ad_account_id,
-                           profile_properties: {
-                             profile_id: "c9ba7b74-06a2-4ea2-8c05-355287355971"
-                           }
-                         }
-                       )["id"]
-                     end
+      @creative_id = client.creatives.create(
+        ad_account_id: ad_account_id,
+        params: {
+          name: "Test Creative",
+          type: "SNAP_AD",
+          top_snap_media_id: @media_id,
+          headline: "Test Headline",
+          ad_account_id: ad_account_id,
+          profile_properties: {
+            profile_id: "c9ba7b74-06a2-4ea2-8c05-355287355971"
+          }
+        }
+      )["id"]
+
       @existing_ad = ad_resource.create(ad_squad_id: @ad_squad_id, params: {
         name: "Ad Uno",
         ad_squad_id: @ad_squad_id,
