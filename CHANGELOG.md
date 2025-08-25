@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/k0va1/snapchat_api/compare/v0.1.4...v0.1.5) (2025-08-25)
+
+
+### Features
+
+* add #preview and #thumnail methods to media resource ([66b9b12](https://github.com/k0va1/snapchat_api/commit/66b9b120e869685d8a05dc89fbf6e7b903e2d669))
+
 ## [0.1.4](https://github.com/k0va1/snapchat_api/compare/v0.1.3...v0.1.4) (2025-07-29)
 
 
