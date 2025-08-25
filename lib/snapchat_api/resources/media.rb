@@ -47,7 +47,12 @@ module SnapchatApi
 
       def preview(media_id:)
         response = client.request(:get, "media/#{media_id}/preview")
-        response.body["preview_url"]
+        response.body
+      end
+
+      def thumbnail(media_id:)
+        response = client.request(:get, "media/#{media_id}/thumbnail")
+        response.body
       end
     end
   end
