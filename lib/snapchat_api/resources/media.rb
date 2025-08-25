@@ -44,6 +44,11 @@ module SnapchatApi
         response = client.request(:post, "media/#{media_id}/upload", upload_params, {"Content-Type" => "multipart/form-data"})
         response.body["result"]
       end
+
+      def preview(media_id:)
+        response = client.request(:get, "media/#{media_id}/preview")
+        response.body["preview_url"]
+      end
     end
   end
 end
