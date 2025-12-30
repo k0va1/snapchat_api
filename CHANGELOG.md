@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.6](https://github.com/k0va1/snapchat_api/compare/v0.1.5...v0.1.6) (2025-12-30)
+
+
+### Features
+
+* add error handling for API responses with request_status ERROR ([554d4c5](https://github.com/k0va1/snapchat_api/commit/554d4c5f8ec3545f632110875cd436de84faaac2))
+* add error handling for API responses with request_status ERROR ([6ebe619](https://github.com/k0va1/snapchat_api/commit/6ebe6190b4283678dbec9104dee051ccc25bd80f))
+
 ## [0.1.5](https://github.com/k0va1/snapchat_api/compare/v0.1.4...v0.1.5) (2025-08-25)
 
 
