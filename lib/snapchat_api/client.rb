@@ -135,10 +135,17 @@ module SnapchatApi
     private
 
     def handle_response(response)
+      body = response.body
+      status = response.status
+
+      # Check for request-level errors (API returns 200 but request_status is ERROR)
+      if response.success? && body.is_a?(Hash)
+        check_request_status_error(body, status)
+        return response
+      end
+
       return response if response.success?
 
-      status = response.status
-      body = response.body
       error_message = body.is_a?(Hash) ? body&.dig("message") : body
 
       klass = case status
@@ -157,6 +164,48 @@ module SnapchatApi
       end
 
       raise klass.new(error_message || "HTTP #{status}", status, body)
+    end
+
+    def check_request_status_error(body, status)
+      return unless body["request_status"] == "ERROR"
+
+      request_id = body["request_id"]
+      sub_errors = extract_sub_errors(body)
+      error_message = build_error_message(body, sub_errors)
+
+      raise SnapchatApi::RequestError.new(error_message, status, body, request_id, sub_errors)
+    end
+
+    def extract_sub_errors(body)
+      sub_errors = []
+
+      # Look for sub-request errors in various response keys
+      # The API may return errors under different keys depending on the endpoint
+      possible_keys = %w[creatives ads campaigns ad_squads media adaccounts]
+
+      possible_keys.each do |key|
+        next unless body[key].is_a?(Array)
+
+        body[key].each do |item|
+          if item.is_a?(Hash) && item["sub_request_status"] == "ERROR"
+            sub_errors << {
+              reason: item["sub_request_error_reason"],
+              status: item["sub_request_status"]
+            }
+          end
+        end
+      end
+
+      sub_errors
+    end
+
+    def build_error_message(body, sub_errors)
+      if sub_errors.any?
+        messages = sub_errors.map { |e| e[:reason] }.compact
+        messages.join("; ")
+      else
+        body["debug_message"] || body["display_message"] || "Request failed with status ERROR"
+      end
     end
   end
 end

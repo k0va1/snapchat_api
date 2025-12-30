@@ -69,3 +69,11 @@ This is a Ruby gem that provides a wrapper for the Snapchat Ads API. The codebas
 - Uses RSpec for testing
 - VCR for recording HTTP interactions
 - Standard Ruby linting with `standardrb`
+
+### IMPORTANT NOTES
+
+- DO NOT GENERATE DOCUMENTATION UNLESS THE USER SPECIFICALLY ASKS FOR IT!
+- For commits use conventional commit messages: https://www.conventionalcommits.org/en/v1.0.0/
+- DO NOT add Claude-related footers to commit messages (no "Generated with Claude Code", no "Co-Authored-By: Claude")
+- DON'T USE TABS, USE SPACES FOR INDENTATION!
+- DON'T WRITE ANY COMMENTS IN THE CODE THAT DESCRIBE THE CODE!!!! WRITE COMMENTS ONLY IF I ASK FOR THEM!
