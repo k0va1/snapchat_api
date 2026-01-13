@@ -28,6 +28,24 @@ RSpec.describe SnapchatApi::Resources::AdSquad do
     end
   end
 
+  describe "#list_all_by_campaign", :vcr do
+    let(:campaign_id) { "861cd1bc-5d58-44f3-8794-4006796db177" }
+
+    it "returns ad squads for a campaign" do
+      ad_squads = ad_squad_resource.list_all_by_campaign(campaign_id: campaign_id)
+      expect(ad_squads).to be_an(Array)
+      expect(ad_squads.first).to include("id", "name", "status")
+      ad_squads.each do |ad_squad|
+        expect(ad_squad["campaign_id"]).to eq(campaign_id)
+      end
+    end
+
+    it "accepts custom limit parameter" do
+      ad_squads = ad_squad_resource.list_all_by_campaign(campaign_id: campaign_id, params: {limit: 10})
+      expect(ad_squads).to be_an(Array)
+    end
+  end
+
   describe "#get", :vcr do
     let(:ad_squad_id) { "0853af89-5929-4c6d-ac6f-78310b434aac" }
 
