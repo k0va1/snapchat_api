@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/k0va1/snapchat_api/compare/v0.1.6...v0.1.7) (2026-01-13)
+
+
+### Features
+
+* add new endpoint for filtering ad squads by campaign ([#11](https://github.com/k0va1/snapchat_api/issues/11)) ([06a1aa3](https://github.com/k0va1/snapchat_api/commit/06a1aa389f69e7757760c26bb17d8a80cf588328))
+
 ## [0.1.6](https://github.com/k0va1/snapchat_api/compare/v0.1.5...v0.1.6) (2025-12-30)
 
 
