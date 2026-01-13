@@ -136,6 +136,10 @@ module SnapchatApi
       @organizations ||= SnapchatApi::Resources::Organization.new(self)
     end
 
+    def funding_sources
+      @funding_sources ||= SnapchatApi::Resources::FundingSource.new(self)
+    end
+
     private
 
     def handle_response(response)

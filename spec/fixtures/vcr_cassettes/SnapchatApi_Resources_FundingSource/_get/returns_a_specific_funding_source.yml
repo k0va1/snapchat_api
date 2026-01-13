@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/fundingsources/894d168d-9b50-4c97-86b6-929ad2397287
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Jan 2026 13:06:04 GMT
+      X-Request-Id:
+      - 7fa89baa-61e0-4655-a00b-c0f696dbc740
+      Content-Length:
+      - '592'
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '1150'
+      X-Envoy-Upstream-Service-Time:
+      - '1151'
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"request_status":"SUCCESS","request_id":"7fa89baa-61e0-4655-a00b-c0f696dbc740","fundingsources":[{"sub_request_status":"SUCCESS","fundingsource":{"id":"894d168d-9b50-4c97-86b6-929ad2397287","updated_at":"2024-12-16T18:32:05.112Z","created_at":"2024-12-16T18:32:05.112Z","type":"CREDIT_CARD","organization_id":"14d6bf9e-353e-43dd-94a3-689231ca9dc0","name":"Amex
+        Air France","card_type":"AMEX","last_4":"3007","daily_spend_limit_micro":15000000000,"daily_spend_limit_currency":"USD","expiration_month":"06","expiration_year":"2028","status":"ACTIVE","billing_address":{"country_code":"FR"}}}]}'
+  recorded_at: Tue, 13 Jan 2026 13:06:06 GMT
+recorded_with: VCR 6.3.1
