@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.8](https://github.com/k0va1/snapchat_api/compare/v0.1.7...v0.1.8) (2026-01-13)
+
+
+### Features
+
+* add funding sources api ([#15](https://github.com/k0va1/snapchat_api/issues/15)) ([1974240](https://github.com/k0va1/snapchat_api/commit/19742401dd77f4209cccf1be3a0c1cb5e8397ba0))
+* add organizations ([#13](https://github.com/k0va1/snapchat_api/issues/13)) ([920bcc0](https://github.com/k0va1/snapchat_api/commit/920bcc08baee865da03cd174d4937a3dab35a6f0))
+
 ## [0.1.7](https://github.com/k0va1/snapchat_api/compare/v0.1.6...v0.1.7) (2026-01-13)
 
 
