@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/me/organizations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Jan 2026 12:51:23 GMT
+      X-Request-Id:
+      - 84a53a87-ad26-4b3e-aef0-6396c1eeb8cd
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '199'
+      X-Envoy-Upstream-Service-Time:
+      - '200'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_status":"SUCCESS","request_id":"84a53a87-ad26-4b3e-aef0-6396c1eeb8cd","organizations":[{"sub_request_status":"SUCCESS","organization":{"id":"14d6bf9e-353e-43dd-94a3-689231ca9dc0","updated_at":"2024-10-29T20:21:02.704Z","created_at":"2020-04-23T07:35:02.040Z","name":"Dolead","country":"FR","postal_code":"75002","locality":"Paris","contact_name":"Salima
+        Igedan","contact_email":"salima.igedan@dolead.com","tax_id":"FR77499425700","address_line_1":"3
+        Rue de Gramont, 75002 Paris","administrative_district_level_1":"FR-J","accepted_term_version":"8","marketing_optin":false,"is_agency":true,"contact_phone_optin":false,"configuration_settings":{"notifications_enabled":true},"type":"ENTERPRISE","state":"ACTIVE","roles":["admin","business_admin","data_admin","member"],"my_display_name":"oleksandr.koval.ext@dolead.com","my_invited_email":"oleksandr.koval.ext@dolead.com","my_member_id":"83ab6708-4b7d-4c90-a8f4-25a6b6a7edc9","createdByCaller":false}},{"sub_request_status":"SUCCESS","organization":{"id":"a538d534-5112-4816-bcc1-9d98863d54ec","updated_at":"2025-04-14T13:45:56.236Z","created_at":"2025-04-14T13:45:46.890Z","name":"Alex","country":"US","contact_name":"Alex","contact_email":"oleksandr.koval.ext@dolead.com","accepted_term_version":"8","marketing_optin":true,"sms_marketing_optin":true,"contact_phone_optin":true,"type":"ENTERPRISE","state":"ACTIVE","business_type":"UNRECOGNIZED","roles":["admin"],"my_display_name":"Alex","my_invited_email":"oleksandr.koval.ext@dolead.com","my_member_id":"d1fedb15-100f-3444-bfc1-769261d74bee","createdByCaller":true}}]}'
+  recorded_at: Tue, 13 Jan 2026 12:51:23 GMT
+recorded_with: VCR 6.3.1
