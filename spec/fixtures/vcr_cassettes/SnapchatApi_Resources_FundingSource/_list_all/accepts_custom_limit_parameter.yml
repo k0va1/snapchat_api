@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://adsapi.snapchat.com/v1/organizations/14d6bf9e-353e-43dd-94a3-689231ca9dc0/fundingsources
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 13 Jan 2026 13:04:27 GMT
+      X-Request-Id:
+      - 4999d0bc-ab56-4be7-bd67-3b063d13b88a
+      Content-Type:
+      - application/json
+      X-Tr-St-1:
+      - '184'
+      X-Envoy-Upstream-Service-Time:
+      - '186'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - API Gateway
+      X-Envoy-Decorator-Operation:
+      - "/v1/"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"request_status":"SUCCESS","request_id":"4999d0bc-ab56-4be7-bd67-3b063d13b88a","fundingsources":[{"sub_request_status":"SUCCESS","fundingsource":{"id":"1830f010-8e73-4272-b3eb-71a29370a6fe","updated_at":"2020-04-27T07:48:22.120Z","created_at":"2020-04-27T07:48:22.120Z","type":"CREDIT_CARD","organization_id":"14d6bf9e-353e-43dd-94a3-689231ca9dc0","name":"American
+        Express","card_type":"AMEX","last_4":"1002","daily_spend_limit_micro":15000000000,"daily_spend_limit_currency":"USD","expiration_month":"02","expiration_year":"2024","status":"ACTIVE"}},{"sub_request_status":"SUCCESS","fundingsource":{"id":"894d168d-9b50-4c97-86b6-929ad2397287","updated_at":"2024-12-16T18:32:05.112Z","created_at":"2024-12-16T18:32:05.112Z","type":"CREDIT_CARD","organization_id":"14d6bf9e-353e-43dd-94a3-689231ca9dc0","name":"Amex
+        Air France","card_type":"AMEX","last_4":"3007","daily_spend_limit_micro":15000000000,"daily_spend_limit_currency":"USD","expiration_month":"06","expiration_year":"2028","status":"ACTIVE","billing_address":{"country_code":"FR"}}},{"sub_request_status":"SUCCESS","fundingsource":{"id":"1a201e0b-b88d-4be5-856f-fafbf05020d9","updated_at":"2026-01-13T01:37:28.480Z","created_at":"2024-10-15T16:21:14.682Z","type":"LINE_OF_CREDIT","organization_id":"14d6bf9e-353e-43dd-94a3-689231ca9dc0","name":"Credit
+        Account for Dolead","available_credit_micro":44280790000,"currency":"EUR","total_budget_micro":50000000000,"spending_limit_strategy":"PAYMENT_REPLENISHING_SPENDING_LIMIT","status":"ACTIVE","credit_account_type":"UNMANAGED","budget_spent_micro":5719210000}},{"sub_request_status":"SUCCESS","fundingsource":{"id":"5b78b082-7a03-48fc-b524-a5af78c4596f","updated_at":"2026-01-13T07:43:32.066Z","created_at":"2024-12-17T21:39:16.116Z","type":"LINE_OF_CREDIT","organization_id":"14d6bf9e-353e-43dd-94a3-689231ca9dc0","name":"Credit
+        Account for Dolead SAS","available_credit_micro":123051350000,"currency":"USD","total_budget_micro":150000000000,"spending_limit_strategy":"PAYMENT_REPLENISHING_SPENDING_LIMIT","status":"ACTIVE","credit_account_type":"UNMANAGED","budget_spent_micro":26948650000}}]}'
+  recorded_at: Tue, 13 Jan 2026 13:04:27 GMT
+recorded_with: VCR 6.3.1
