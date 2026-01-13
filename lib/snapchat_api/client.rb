@@ -132,6 +132,10 @@ module SnapchatApi
       @ads ||= SnapchatApi::Resources::Ad.new(self)
     end
 
+    def organizations
+      @organizations ||= SnapchatApi::Resources::Organization.new(self)
+    end
+
     private
 
     def handle_response(response)
