@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/k0va1/snapchat_api/compare/v0.1.8...v0.1.9) (2026-07-27)
+
+
+### Features
+
+* add chunked media upload for files larger than 32MB ([#16](https://github.com/k0va1/snapchat_api/issues/16)) ([854dcdb](https://github.com/k0va1/snapchat_api/commit/854dcdbc1e9f9ef8abc70166f20a264cdb5e586f))
+
 ## [0.1.8](https://github.com/k0va1/snapchat_api/compare/v0.1.7...v0.1.8) (2026-01-13)
 
 
