@@ -25,7 +25,6 @@ module SnapchatApi
 
     def connection
       @connection ||= Faraday.new(url: ADS_URL) do |conn|
-        conn.headers["Authorization"] = "Bearer #{@access_token}"
         conn.headers["Content-Type"] = "application/json"
 
         conn.options.timeout = 60
@@ -45,6 +44,8 @@ module SnapchatApi
 
     def request(method, path, params = {}, headers = {})
       response = connection.run_request(method, path, nil, headers) do |req|
+        req.headers["Authorization"] = "Bearer #{@access_token}"
+
         case method
         when :get, :delete
           req.params = params
