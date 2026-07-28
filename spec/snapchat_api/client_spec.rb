@@ -147,4 +147,35 @@ RSpec.describe SnapchatApi::Client do
       end
     end
   end
+
+  describe "authorization header" do
+    it "sends the current access token on every request" do
+      stub = stub_request(:get, "https://adsapi.snapchat.com/v1/test")
+        .with(headers: {"Authorization" => "Bearer test_access_token"})
+        .to_return(status: 200, body: {"request_status" => "SUCCESS"}.to_json, headers: {"Content-Type" => "application/json"})
+
+      client.request(:get, "test")
+
+      expect(stub).to have_been_requested
+    end
+
+    it "uses the new token after the access token is refreshed on the same client" do
+      first = stub_request(:get, "https://adsapi.snapchat.com/v1/test")
+        .with(headers: {"Authorization" => "Bearer test_access_token"})
+        .to_return(status: 401, body: {"message" => "unauthorized"}.to_json, headers: {"Content-Type" => "application/json"})
+
+      expect { client.request(:get, "test") }.to raise_error(SnapchatApi::AuthenticationError)
+
+      client.access_token = "refreshed_access_token"
+      second = stub_request(:get, "https://adsapi.snapchat.com/v1/test")
+        .with(headers: {"Authorization" => "Bearer refreshed_access_token"})
+        .to_return(status: 200, body: {"request_status" => "SUCCESS"}.to_json, headers: {"Content-Type" => "application/json"})
+
+      response = client.request(:get, "test")
+
+      expect(response.status).to eq(200)
+      expect(first).to have_been_requested
+      expect(second).to have_been_requested
+    end
+  end
 end
