@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.10](https://github.com/k0va1/snapchat_api/compare/v0.1.9...v0.1.10) (2026-07-28)
+
+
+### Bug Fixes
+
+* apply access token per request so token refresh takes effect ([#18](https://github.com/k0va1/snapchat_api/issues/18)) ([247e320](https://github.com/k0va1/snapchat_api/commit/247e32006ef293882c232ab2104d55c4b1f17a79))
+
 ## [0.1.9](https://github.com/k0va1/snapchat_api/compare/v0.1.8...v0.1.9) (2026-07-27)
 
 
