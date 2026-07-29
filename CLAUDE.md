@@ -12,10 +12,10 @@ bundle install
 ### Testing
 ```bash
 # Run all tests
-bundle exec rspec
+bundle exec rake test
 
 # Run specific test file
-bundle exec rspec spec/snapchat_api_spec.rb
+bundle exec rake test TEST=test/snapchat_api_test.rb
 
 # Alternative via Makefile
 make test
@@ -66,7 +66,7 @@ This is a Ruby gem that provides a wrapper for the Snapchat Ads API. The codebas
 - `standard` for Ruby linting
 
 ### Testing
-- Uses RSpec for testing
+- Uses Minitest for testing
 - VCR for recording HTTP interactions
 - Standard Ruby linting with `standardrb`
 

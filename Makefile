@@ -7,4 +7,4 @@ lint-fix:
 	bundle exec standardrb --fix
 
 test:
-	@env $$(cat .env | xargs) bundle exec rspec $(filter-out $@,$(MAKECMDGOALS))
+	@env $$(cat .env | xargs) bundle exec rake test $(addprefix TEST=,$(filter-out $@,$(MAKECMDGOALS)))

@@ -21,7 +21,6 @@ GEM
     crack (1.0.0)
       bigdecimal
       rexml
-    diff-lcs (1.6.2)
     faraday (2.13.1)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -46,6 +45,7 @@ GEM
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
     mime-types-data (3.2025.0514)
+    minitest (5.27.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
     multipart-post (2.4.1)
@@ -71,19 +71,6 @@ GEM
     rake (13.2.1)
     regexp_parser (2.10.0)
     rexml (3.4.1)
-    rspec (3.13.0)
-      rspec-core (~> 3.13.0)
-      rspec-expectations (~> 3.13.0)
-      rspec-mocks (~> 3.13.0)
-    rspec-core (3.13.3)
-      rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.4)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.13.0)
-    rspec-mocks (3.13.4)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.13.0)
-    rspec-support (3.13.3)
     rubocop (1.75.6)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -137,8 +124,8 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
+  minitest (~> 5.0)
   rake (~> 13.0)
-  rspec (~> 3.0)
   snapchat_api!
   standard (= 1.49.0)
   vcr (~> 6.0)
